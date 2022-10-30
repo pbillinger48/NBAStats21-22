@@ -1,0 +1,10 @@
+﻿IF OBJECT_ID(N'NBA.TeamType') IS NULL
+BEGIN
+   CREATE TABLE NBA.TeamType
+   (
+      TeamTypeID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY,
+      [Name] NVARCHAR(10) NOT NULL,
+
+      UNIQUE([Name])
+   );
+END;

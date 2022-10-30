@@ -1,0 +1,12 @@
+﻿IF OBJECT_ID(N'NBA.Coach') IS NULL
+BEGIN
+   CREATE TABLE NBA.Coach
+   (
+      CoachID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY,
+      TeamID INT NOT NULL FOREIGN KEY
+        REFERENCES NBA.Team(TeamID),
+      [Name] NVARCHAR(50) NOT NULL,
+
+      UNIQUE(TeamID)
+   );
+END;
