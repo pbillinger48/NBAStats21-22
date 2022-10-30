@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace _21_22NBAStats
 {
-    public partial class Form1 : Form
+    public partial class QueryStatsForm : Form
     {
-        public Form1()
+        public QueryStatsForm()
         {
             InitializeComponent();
         }
 
-        private void uxQueryStats_Click(object sender, EventArgs e)
+        private void uxBackHomeButton_Click(object sender, EventArgs e)
         {
-            QueryStatsForm queryStatsForm = new QueryStatsForm();
-            queryStatsForm.Show();
+            Form form1 = new Form();
+            form1.Show();
             this.Hide();
         }
     }
