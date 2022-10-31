@@ -84,27 +84,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Scripts\CreateDatabase.ps1" />
-    <None Include="Scripts\DropDatabase.ps1" />
-    <None Include="Scripts\RebuildDatabase.ps1" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="NBAData\Sql\Schemas\NBA.sql" />
-    <Content Include="NBAData\Sql\Tables\NBA.Coach.sql" />
-    <Content Include="NBAData\Sql\Tables\NBA.Game.sql" />
-    <Content Include="NBAData\Sql\Tables\NBA.GameStats.sql" />
-    <Content Include="NBAData\Sql\Tables\NBA.Player.sql" />
-    <Content Include="NBAData\Sql\Tables\NBA.Team.sql" />
-    <Content Include="NBAData\Sql\Tables\NBA.TeamGame.sql" />
-    <Content Include="NBAData\Sql\Tables\NBA.TeamType.sql" />
-    <Content Include="Scripts\CreateDatabase.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NBAData\Sql\Data\" />
-    <Folder Include="NBAData\Sql\Procedures\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
