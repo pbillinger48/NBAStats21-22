@@ -1,0 +1,9 @@
+14.0
+7
+1       SQLCHAR             0       12      "\t"     1     GameStatsID                ""
+2       SQLCHAR             0       12      "\t"     2     Points                     ""
+3       SQLCHAR             0       12      "\t"     3     Rebounds                   ""
+4       SQLCHAR             0       12      "\t"     4     Assists                    ""
+5       SQLCHAR             0       12      "\t"     5     Blocks                     ""
+6       SQLCHAR             0       12      "\t"     6     Steals                     ""
+7       SQLCHAR             0       12      "\r\n"   7     Minutes                    ""

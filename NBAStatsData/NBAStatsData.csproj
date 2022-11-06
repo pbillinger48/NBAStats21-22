@@ -56,10 +56,12 @@
     <Content Include="Sql\Tables\NBA.Team.sql" />
     <Content Include="Sql\Tables\NBA.TeamGame.sql" />
     <Content Include="Sql\Tables\NBA.TeamType.sql" />
+    <Content Include="Sql\Tables\NBA.TempData.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\CreateDatabase.ps1" />
     <None Include="Scripts\DropDatabase.ps1" />
+    <None Include="Scripts\ImportGameStatsData.ps1" />
     <None Include="Scripts\RebuildDatabase.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

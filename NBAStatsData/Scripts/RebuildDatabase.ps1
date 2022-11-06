@@ -20,8 +20,8 @@ Write-Host "Rebuilding database $Database on $Server..."
 <#
    If on your local machine, you can drop and re-create the database.
 #>
-& "NBAStatsData\Scripts\DropDatabase.ps1" -Database $Database
-& "NBAStatsData\Scripts\CreateDatabase.ps1" -Database $Database
+& ".\DropDatabase.ps1" -Database $Database
+& ".\CreateDatabase.ps1" -Database $Database
 
 <#
    If on the department's server, you don't have permissions to drop or create databases.
@@ -31,23 +31,24 @@ Write-Host "Rebuilding database $Database on $Server..."
 #Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "NBAStatsData\Sql\Tables\DropTables.sql"
 
 Write-Host "Creating schema..."
-Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "NBAStatsData\Sql\Schemas\NBA.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Schemas\NBA.sql"
 
 Write-Host "Creating tables..."
-Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "NBAStatsData\Sql\Tables\NBA.Team.sql"
-Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "NBAStatsData\Sql\Tables\NBA.Coach.sql"
-Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "NBAStatsData\Sql\Tables\NBA.Player.sql"
-Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "NBAStatsData\Sql\Tables\NBA.Game.sql"
-Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "NBAStatsData\Sql\Tables\NBA.TeamType.sql"
-Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "NBAStatsData\Sql\Tables\NBA.TeamGame.sql"
-Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "NBAStatsData\Sql\Tables\NBA.GameStats.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Tables\NBA.Team.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Tables\NBA.Coach.sql"
+#Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Tables\NBA.Player.sql"
+#Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Tables\NBA.Game.sql"
+#Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Tables\NBA.TeamType.sql"
+#Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Tables\NBA.TeamGame.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Tables\NBA.GameStats.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Tables\NBA.TempData.sql"
 
 Write-Host "Stored procedures..."
 #Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "NBAStatsData\Sql\Procedures\NBA.CreateNBA.sql"
 
 Write-Host "Inserting data..."
-Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "NBAStatsData\Sql\Data\NBA.CreateTeam.sql"
-Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "NBAStatsData\Sql\Data\NBA.CreateCoach.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Data\NBA.CreateTeam.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Data\NBA.CreateCoach.sql"
 
 Write-Host "Rebuild completed."
 Write-Host ""
