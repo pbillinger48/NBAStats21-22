@@ -49,6 +49,7 @@ Write-Host "Stored procedures..."
 Write-Host "Inserting data..."
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Data\NBA.CreateTeam.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Data\NBA.CreateCoach.sql"
+./ImportGameStatsData.ps1
 
 Write-Host "Rebuild completed."
 Write-Host ""

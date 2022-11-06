@@ -1,11 +1,16 @@
 14.0
-9
-1       SQLCHAR             0       12      ","     1     TempDataID               ""
-2       SQLCHAR             0       200     ","     2     PlayerName               SQL_Latin1_General_CP1_CI_AS
-3       SQLCHAR             0       200     ","     3     TeamAbbrev               SQL_Latin1_General_CP1_CI_AS
-4       SQLCHAR             0       12      ","     4     Points                   ""
-5       SQLCHAR             0       12      ","     5     Rebounds                 ""
-6       SQLCHAR             0       12      ","     6     Assists                  ""
-7       SQLCHAR             0       12      ","     7     Blocks                   ""
-8       SQLCHAR             0       12      ","     8     Steals                   ""
-9       SQLCHAR             0       200     "\r\n"   9     Minutes                  SQL_Latin1_General_CP1_CI_AS
+14
+1       SQLCHAR             0       200     ","      1     GameDate                                 SQL_Latin1_General_CP1_CI_AS
+2       SQLCHAR             0       200     ","      2     TeamAbbrev                               SQL_Latin1_General_CP1_CI_AS
+3       SQLCHAR             0       12      ","      3     TeamScore                                ""
+4       SQLCHAR             0       200     ","      4     HomeOrAway                               SQL_Latin1_General_CP1_CI_AS
+5       SQLCHAR             0       200     ","      5     OpponentTeamAbbrev                       SQL_Latin1_General_CP1_CI_AS
+6       SQLCHAR             0       12      ","      6     OpponentTeamScore                        ""
+7       SQLCHAR             0       200     ","      7     PlayerName                               SQL_Latin1_General_CP1_CI_AS
+8       SQLCHAR             0       12      ","      8     Points                                   ""
+9       SQLCHAR             0       12      ","      9     Rebounds                                 ""
+10      SQLCHAR             0       12      ","      10    Assists                                  ""
+11      SQLCHAR             0       12      ","      11    Blocks                                   ""
+12      SQLCHAR             0       12      ","      12    Steals                                   ""
+13      SQLCHAR             0       12      ","      13    Turnovers                                ""
+14      SQLCHAR             0       200     "\r\n"   14    Minutes                                  SQL_Latin1_General_CP1_CI_AS

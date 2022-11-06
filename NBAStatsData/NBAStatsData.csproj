@@ -71,6 +71,7 @@
     <None Include="Scripts\DropDatabase.ps1" />
     <None Include="Scripts\ImportGameStatsData.ps1" />
     <None Include="Scripts\RebuildDatabase.ps1" />
+    <None Include="Sql\Data\CurrentNBAData.csv" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
