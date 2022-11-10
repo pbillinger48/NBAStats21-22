@@ -3,6 +3,7 @@ BEGIN
    CREATE TABLE NBA.Game
    (
       GameID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY,
-      GameDate DATETIME NOT NULL
+      [Date] DATE NOT NULL,
+      Matchup NVARCHAR(15) NOT NULL
    );
 END;

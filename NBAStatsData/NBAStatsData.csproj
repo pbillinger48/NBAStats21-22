@@ -53,6 +53,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\CreateDatabase.sql" />
+    <Content Include="Sql\Data\NBA.CreateGameStats.sql" />
+    <Content Include="Sql\Data\NBA.CreateTeamGame.sql" />
+    <Content Include="Sql\Data\NBA.CreateGame.sql" />
+    <Content Include="Sql\Data\NBA.CreatePlayer.sql" />
     <Content Include="Sql\Data\NBA.CreateCoach.sql" />
     <Content Include="Sql\Data\NBA.CreateTeamType.sql" />
     <Content Include="Sql\Data\NBA.CreateTeam.sql" />

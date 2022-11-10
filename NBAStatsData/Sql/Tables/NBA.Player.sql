@@ -6,10 +6,10 @@ BEGIN
       CurrentTeamID INT NOT NULL FOREIGN KEY
         REFERENCES NBA.Team(TeamID),
       [Name] NVARCHAR(50) NOT NULL,
-      Age NVARCHAR(3) NOT NULL,
-      Position NVARCHAR(3) NOT NULL,
-      Height NVARCHAR(15) NOT NULL,
-      [Weight] NVARCHAR(5) NOT NULL,
+      --Age NVARCHAR(3) NOT NULL,
+      --Position NVARCHAR(3) NOT NULL,
+      --Height NVARCHAR(15) NOT NULL,
+      --[Weight] NVARCHAR(5) NOT NULL,
 
       UNIQUE([Name])
    );
