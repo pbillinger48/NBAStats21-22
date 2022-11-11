@@ -41,6 +41,14 @@ namespace _21_22NBAStats
             Player p = repo.GetPlayer(uxQueryTextBox.Text);
 
             uxQueryResultLabel.Text = p.Name + p.PlayerID + p.CurrentTeamID;
+            DataTable table = new DataTable();
+            table.Columns.Add("ID", typeof(int));
+            table.Columns.Add("Name", typeof(string));
+            table.Columns.Add("Team", typeof(int));
+            table.Rows.Add(p.PlayerID, p.Name, p.CurrentTeamID);
+
+            uxDataGrid.DataSource = null;
+            uxDataGrid.DataSource = table;
         }
     }
 }

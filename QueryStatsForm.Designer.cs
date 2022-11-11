@@ -33,6 +33,8 @@ namespace _21_22NBAStats
             this.uxBackHomeButton = new System.Windows.Forms.Button();
             this.uxQueryTextBox = new System.Windows.Forms.TextBox();
             this.uxQueryResultLabel = new System.Windows.Forms.Label();
+            this.uxDataGrid = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.uxDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // uxStartQueryButton
@@ -71,17 +73,29 @@ namespace _21_22NBAStats
             this.uxQueryResultLabel.TabIndex = 3;
             this.uxQueryResultLabel.Text = "Query Result";
             // 
+            // uxDataGrid
+            // 
+            this.uxDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.uxDataGrid.Location = new System.Drawing.Point(131, 82);
+            this.uxDataGrid.Name = "uxDataGrid";
+            this.uxDataGrid.RowHeadersWidth = 51;
+            this.uxDataGrid.RowTemplate.Height = 24;
+            this.uxDataGrid.Size = new System.Drawing.Size(368, 228);
+            this.uxDataGrid.TabIndex = 4;
+            // 
             // QueryStatsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.uxDataGrid);
             this.Controls.Add(this.uxQueryResultLabel);
             this.Controls.Add(this.uxQueryTextBox);
             this.Controls.Add(this.uxBackHomeButton);
             this.Controls.Add(this.uxStartQueryButton);
             this.Name = "QueryStatsForm";
             this.Text = "QueryStatsForm";
+            ((System.ComponentModel.ISupportInitialize)(this.uxDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -93,5 +107,6 @@ namespace _21_22NBAStats
         private System.Windows.Forms.Button uxBackHomeButton;
         private System.Windows.Forms.TextBox uxQueryTextBox;
         private System.Windows.Forms.Label uxQueryResultLabel;
+        private System.Windows.Forms.DataGridView uxDataGrid;
     }
 }
