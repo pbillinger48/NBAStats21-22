@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "21-22NBAStats", "21-22NBASt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NBAStatsData", "NBAStatsData\NBAStatsData.csproj", "{1A05A9F8-5CC4-4F36-9606-7800DC9FDDC6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{A5AC459D-6C0A-4D6E-AD65-ECB3E0FEC3A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{1A05A9F8-5CC4-4F36-9606-7800DC9FDDC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A05A9F8-5CC4-4F36-9606-7800DC9FDDC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A05A9F8-5CC4-4F36-9606-7800DC9FDDC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5AC459D-6C0A-4D6E-AD65-ECB3E0FEC3A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5AC459D-6C0A-4D6E-AD65-ECB3E0FEC3A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5AC459D-6C0A-4D6E-AD65-ECB3E0FEC3A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5AC459D-6C0A-4D6E-AD65-ECB3E0FEC3A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

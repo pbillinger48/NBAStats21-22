@@ -45,6 +45,7 @@ Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Tab
 
 Write-Host "Stored procedures..."
 #Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "NBAStatsData\Sql\Procedures\NBA.CreateNBA.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Procedures\NBA.GetPlayer.sql"
 
 Write-Host "Inserting data..."
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Data\NBA.CreateTeam.sql"
@@ -54,7 +55,7 @@ Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Dat
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Data\NBA.CreatePlayer.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Data\NBA.CreateGame.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Data\NBA.CreateTeamGame.sql"
-Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Data\NBA.GameStats.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Data\NBA.CreateGameStats.sql"
 
 Write-Host "Rebuild completed."
 Write-Host ""
