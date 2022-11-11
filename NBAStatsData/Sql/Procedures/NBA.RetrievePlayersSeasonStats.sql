@@ -1,4 +1,4 @@
-﻿CREATE OR ALTER PROCEDURE NBA.GetPlayersSeasonStats
+﻿CREATE OR ALTER PROCEDURE NBA.RetrievePlayersSeasonStats
 	@Name NVARCHAR(128) = '%',
 	@PPGMin DECIMAL(7,1) = 0,
 	@PPGMax DECIMAL(7,1) = 99,
