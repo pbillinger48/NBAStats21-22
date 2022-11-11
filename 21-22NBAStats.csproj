@@ -53,6 +53,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlayerPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PlayerPanel.Designer.cs">
+      <DependentUpon>PlayerPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryStatsForm.cs">
@@ -61,8 +67,23 @@
     <Compile Include="QueryStatsForm.Designer.cs">
       <DependentUpon>QueryStatsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TeamPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeamPanel.Designer.cs">
+      <DependentUpon>TeamPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestHomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestHomeForm.Designer.cs">
+      <DependentUpon>TestHomeForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerPanel.resx">
+      <DependentUpon>PlayerPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -75,6 +96,12 @@
     </Compile>
     <EmbeddedResource Include="QueryStatsForm.resx">
       <DependentUpon>QueryStatsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamPanel.resx">
+      <DependentUpon>TeamPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestHomeForm.resx">
+      <DependentUpon>TestHomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

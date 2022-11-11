@@ -52,6 +52,7 @@ namespace _21_22NBAStats
             this.uxAddGameButton.TabIndex = 1;
             this.uxAddGameButton.Text = "Add Game";
             this.uxAddGameButton.UseVisualStyleBackColor = true;
+            this.uxAddGameButton.Click += new System.EventHandler(this.uxAddGameButton_Click);
             // 
             // uxQueryStats
             // 

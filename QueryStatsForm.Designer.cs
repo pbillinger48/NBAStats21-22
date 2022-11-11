@@ -87,7 +87,7 @@ namespace _21_22NBAStats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(740, 414);
             this.Controls.Add(this.uxDataGrid);
             this.Controls.Add(this.uxQueryResultLabel);
             this.Controls.Add(this.uxQueryTextBox);

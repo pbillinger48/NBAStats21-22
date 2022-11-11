@@ -19,8 +19,19 @@ namespace _21_22NBAStats
 
         private void uxQueryStats_Click(object sender, EventArgs e)
         {
-            QueryStatsForm queryStatsForm = new QueryStatsForm();
-            queryStatsForm.Show();
+            QueryStatsForm form = new QueryStatsForm();
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
+            //QueryStatsForm queryStatsForm = new QueryStatsForm();
+            //queryStatsForm.Show();
+            //this.Hide();
+        }
+
+        private void uxAddGameButton_Click(object sender, EventArgs e)
+        {
+            TestHomeForm testForm = new TestHomeForm();
+            testForm.Show();
             this.Hide();
         }
     }
