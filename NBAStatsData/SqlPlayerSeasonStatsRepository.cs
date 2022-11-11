@@ -9,11 +9,11 @@ using NBAStatsData.DataDelegates;
 
 namespace NBAStatsData
 {
-    public class SqlPlayerRepository: IPlayerRepository
+    public class SqlPlayerSeasonStatsRepository: IPlayerSeasonStatsRepository
     {
         private readonly SqlCommandExecutor executor;
 
-        public SqlPlayerRepository(string connectionString)
+        public SqlPlayerSeasonStatsRepository(string connectionString)
         {
             executor = new SqlCommandExecutor(connectionString);
         }
@@ -49,11 +49,9 @@ namespace NBAStatsData
             return executor.ExecuteReader(d);
         }
 
-        public IReadOnlyList<Player> RetrievePlayers()
+        public IReadOnlyList<PlayerSeasonStats> RetrievePlayers()
         {
-            throw new NotImplementedException();
-
-            //return executor.ExecuteReader(new RetrievePlayersDataDelegate());
+            return executor.ExecuteReader(new RetrievePlayersSeasonStatsDataDelegate());
         }
     }
 }

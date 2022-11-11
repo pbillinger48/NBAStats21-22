@@ -31,10 +31,10 @@ namespace _21_22NBAStats
 
         private void uxStartQueryButton_Click(object sender, EventArgs e)
         {
-            IPlayerRepository repo;
+            IPlayerSeasonStatsRepository repo;
             TransactionScope transaction;
 
-            repo = new SqlPlayerRepository(connectionString);
+            repo = new SqlPlayerSeasonStatsRepository(connectionString);
 
             transaction = new TransactionScope();
 

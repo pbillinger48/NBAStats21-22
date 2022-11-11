@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NBAStatsData
 {
-    public interface IPlayerRepository
+    public interface IPlayerSeasonStatsRepository
     {
         /// <summary>
         /// Retrieves all players in the database.
@@ -15,7 +15,7 @@ namespace NBAStatsData
         /// <returns>
         /// <see cref="IReadOnlyList{Player}"/> containing all Players.
         /// </returns>
-        IReadOnlyList<Player> RetrievePlayers();
+        IReadOnlyList<PlayerSeasonStats> RetrievePlayers();
 
         /// <summary>
         /// Fetches the Player with the given <paramref name="playerId"/> if it exists.
