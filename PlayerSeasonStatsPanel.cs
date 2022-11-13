@@ -29,20 +29,20 @@ namespace _21_22NBAStats
             repo = new SqlPlayerSeasonStatsRepository(connectionString);
 
             transaction = new TransactionScope();
-            decimal PPGMax = 0;
-            decimal PPGMin = 0;
-            decimal RPGMax = 0;
-            decimal RPGMin = 0;
-            decimal APGMax = 0;
-            decimal APGMin = 0;
-            decimal BPGMax = 0;
-            decimal BPGMin = 0;
-            decimal SPGMax = 0;
-            decimal SPGMin = 0;
-            decimal TPGMax = 0;
-            decimal TPGMin = 0;
-            decimal MPGMax = 0;
-            decimal MPGMin = 0;
+            decimal? PPGMax = 0;
+            decimal? PPGMin = 0;
+            decimal? RPGMax = 0;
+            decimal? RPGMin = 0;
+            decimal? APGMax = 0;
+            decimal? APGMin = 0;
+            decimal? BPGMax = 0;
+            decimal? BPGMin = 0;
+            decimal? SPGMax = 0;
+            decimal? SPGMin = 0;
+            decimal? TPGMax = 0;
+            decimal? TPGMin = 0;
+            decimal? MPGMax = 0;
+            decimal? MPGMin = 0;
             string playerName = "";
             string teamName = "";
 
@@ -110,7 +110,22 @@ namespace _21_22NBAStats
                 MessageBox.Show("MinutesPG minimum value must be lower than the maximum value");
             }
 
-            IReadOnlyList<PlayerSeasonStats> list = repo.RetrievePlayers();
+            PPGMin = PPGMin == 0 ? null : PPGMin;
+            PPGMax = PPGMax == 0 ? null : PPGMax;
+            RPGMax = RPGMax == 0 ? null : RPGMax;
+            RPGMin = RPGMin == 0 ? null : RPGMin;
+            APGMax = APGMax == 0 ? null : APGMax;
+            APGMin = APGMin == 0 ? null : APGMin;
+            BPGMax = BPGMax == 0 ? null : BPGMax;
+            BPGMin = BPGMin == 0 ? null : BPGMin;
+            SPGMax = SPGMax == 0 ? null : SPGMax;
+            SPGMin = SPGMin == 0 ? null : SPGMin;
+            TPGMax = TPGMax == 0 ? null : TPGMax;
+            TPGMin = TPGMin == 0 ? null : TPGMin;
+            MPGMax = MPGMax == 0 ? null : MPGMax;
+            MPGMin = MPGMin == 0 ? null : MPGMin;
+            IReadOnlyList<PlayerSeasonStats> list = repo.RetrievePlayers(PPGMin,PPGMax,RPGMax,RPGMin,
+                APGMax, APGMin, BPGMax,BPGMin, SPGMax, SPGMin, TPGMax, TPGMin, MPGMax, MPGMin);
 
             DataTable table = new DataTable();
             table.Columns.Add("PlayerName", typeof(string));

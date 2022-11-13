@@ -15,7 +15,9 @@ namespace NBAStatsData
         /// <returns>
         /// <see cref="IReadOnlyList{Player}"/> containing all Players.
         /// </returns>
-        IReadOnlyList<PlayerSeasonStats> RetrievePlayers();
+        IReadOnlyList<PlayerSeasonStats> RetrievePlayers(decimal? ppgMin, decimal? ppgMax, decimal? RPGMax, decimal? RPGMin,
+                decimal? APGMax, decimal? APGMin, decimal? BPGMax, decimal? BPGMin, decimal? SPGMax, decimal? SPGMin,
+                decimal? TPGMax, decimal? TPGMin, decimal? MPGMax, decimal? MPGMin);
 
         /// <summary>
         /// Fetches the Player with the given <paramref name="playerId"/> if it exists.
