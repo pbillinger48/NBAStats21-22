@@ -28,6 +28,7 @@ namespace NBAStatsData.DataDelegates
                    reader.GetValue<Decimal>("PointsPG"),
                    reader.GetValue<Decimal>("ReboundsPG"),
                    reader.GetValue<Decimal>("AssistsPG"),
+                   reader.GetValue<Decimal>("BlocksPG"),
                    reader.GetValue<Decimal>("StealsPG"),
                    reader.GetValue<Decimal>("TurnoversPG"),
                    reader.GetValue<Decimal>("MinutesPG")));

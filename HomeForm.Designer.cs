@@ -1,7 +1,7 @@
 ﻿
 namespace _21_22NBAStats
 {
-    partial class TestHomeForm
+    partial class HomeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,11 +31,11 @@ namespace _21_22NBAStats
         {
             this.uxMenuStrip = new System.Windows.Forms.MenuStrip();
             this.playersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playerStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teamsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.coachesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testPanelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uxMainPanel = new System.Windows.Forms.Panel();
-            this.playerStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uxMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +51,7 @@ namespace _21_22NBAStats
             this.uxMenuStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.uxMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.uxMenuStrip.Name = "uxMenuStrip";
-            this.uxMenuStrip.Size = new System.Drawing.Size(1017, 28);
+            this.uxMenuStrip.Size = new System.Drawing.Size(1259, 28);
             this.uxMenuStrip.TabIndex = 0;
             this.uxMenuStrip.Text = "menuStrip1";
             // 
@@ -62,6 +62,13 @@ namespace _21_22NBAStats
             this.playersToolStripMenuItem.Name = "playersToolStripMenuItem";
             this.playersToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
             this.playersToolStripMenuItem.Text = "Players";
+            // 
+            // playerStatsToolStripMenuItem
+            // 
+            this.playerStatsToolStripMenuItem.Name = "playerStatsToolStripMenuItem";
+            this.playerStatsToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.playerStatsToolStripMenuItem.Text = "Season Stats";
+            this.playerStatsToolStripMenuItem.Click += new System.EventHandler(this.PlayerSeasonStatsToolStripMenuItem_Click);
             // 
             // teamsToolStripMenuItem
             // 
@@ -85,26 +92,20 @@ namespace _21_22NBAStats
             // 
             this.uxMainPanel.Location = new System.Drawing.Point(6, 31);
             this.uxMainPanel.Name = "uxMainPanel";
-            this.uxMainPanel.Size = new System.Drawing.Size(1005, 489);
+            this.uxMainPanel.Size = new System.Drawing.Size(1246, 512);
             this.uxMainPanel.TabIndex = 2;
             // 
-            // playerStatsToolStripMenuItem
-            // 
-            this.playerStatsToolStripMenuItem.Name = "playerStatsToolStripMenuItem";
-            this.playerStatsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.playerStatsToolStripMenuItem.Text = "Player Stats";
-            this.playerStatsToolStripMenuItem.Click += new System.EventHandler(this.playerStatsToolStripMenuItem_Click);
-            // 
-            // TestHomeForm
+            // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1017, 524);
+            this.ClientSize = new System.Drawing.Size(1259, 547);
             this.Controls.Add(this.uxMainPanel);
             this.Controls.Add(this.uxMenuStrip);
             this.MainMenuStrip = this.uxMenuStrip;
-            this.Name = "TestHomeForm";
-            this.Text = "TestHomeForm";
+            this.Name = "HomeForm";
+            this.Text = "21-22NBAStats";
+            this.Load += new System.EventHandler(this.HomeForm_Load);
             this.uxMenuStrip.ResumeLayout(false);
             this.uxMenuStrip.PerformLayout();
             this.ResumeLayout(false);

@@ -13,11 +13,12 @@ namespace NBAStatsData.Models
         public Decimal PointsPerGame { get;  }
         public Decimal ReboundsPerGame { get;  }
         public Decimal AssistsPerGame { get;  }
+        public Decimal BlocksPerGame { get; }
         public Decimal StealsPerGame { get; }
         public Decimal TurnoversPerGame { get; }
         public Decimal MinutesPerGame { get;  }
 
-        public PlayerSeasonStats(string name , string teamName, decimal ppg, decimal rpg, decimal apg, 
+        public PlayerSeasonStats(string name , string teamName, decimal ppg, decimal rpg, decimal apg, decimal bpg,
                         decimal spg, decimal tpg, decimal mpg)
         {
             Name = name;
@@ -25,6 +26,7 @@ namespace NBAStatsData.Models
             PointsPerGame = ppg;
             ReboundsPerGame = rpg;
             AssistsPerGame = apg;
+            BlocksPerGame = bpg;
             StealsPerGame = spg;
             TurnoversPerGame = tpg;
             MinutesPerGame = mpg;
