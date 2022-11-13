@@ -24,18 +24,20 @@ CAST(CAST(SUM(G.Assists)AS DECIMAL(7,1)) / (CAST(COUNT(*)AS DECIMAL(7,1)))AS DEC
 CAST(CAST(SUM(G.Blocks)AS DECIMAL(7,1)) / (CAST(COUNT(*)AS DECIMAL(7,1)))AS DECIMAL (7,1)) AS BlocksPG,
 CAST(CAST(SUM(G.Steals)AS DECIMAL(7,1)) / (CAST(COUNT(*)AS DECIMAL(7,1)))AS DECIMAL (7,1)) AS StealsPG,
 CAST(CAST(SUM(G.Turnovers)AS DECIMAL(7,1)) / (CAST(COUNT(*)AS DECIMAL(7,1)))AS DECIMAL (7,1)) AS TurnoversPG,
-CAST(CAST(SUM(G.Minutes)AS DECIMAL(7,1)) / (CAST(COUNT(*)AS DECIMAL(7,1)))AS DECIMAL (7,1)) AS MinutesPG,
-T.[Name] AS TeamName
+CAST(CAST(SUM(G.Minutes)AS DECIMAL(7,1)) / (CAST(COUNT(*)AS DECIMAL(7,1)))AS DECIMAL (7,1)) AS MinutesPG
+
 
 
 From Nba.GameStats G
 INNER JOIN Nba.Player P ON P.PlayerID = G.PlayerID 
 INNER JOIN Nba.Team T ON T.TeamID = G.TeamID
 WHERE G.Minutes > 0 
-GROUP BY P.[Name], T.[Name]
+GROUP BY P.[Name]
 )
-SELECT V.PlayerName, V.PointsPG, V.ReboundsPG, V.AssistsPG, V.BlocksPG, V.StealsPG, V.TurnoversPG, V.MinutesPG, V.TeamName
+SELECT V.PlayerName, V.PointsPG, V.ReboundsPG, V.AssistsPG, V.BlocksPG, V.StealsPG, V.TurnoversPG, V.MinutesPG, T.[Name] AS TeamName
 FROM PlayerStatsValues V
+INNER JOIN NBA.Player P ON P.[Name] = V.PlayerName
+INNER JOIN NBA.Team T ON T.TeamID = P.CurrentTeamID
 Where V.PlayerName LIKE @Name 
 AND V.PointsPG BETWEEN @PPGMin AND @PPGMax 
 AND V.ReboundsPG BETWEEN @RPGMin AND @RPGMax
@@ -44,5 +46,5 @@ AND V.BlocksPG BETWEEN @BPGMin AND @BPGMax
 AND V.StealsPG BETWEEN @SPGMin AND @SPGMax
 AND V.TurnoversPG BETWEEN @TOPGMin AND @TOPGMax
 AND V.MinutesPG BETWEEN @MPGMin AND @MPGMax
-AND V.TeamName LIKE @TeamName;
+AND T.[Name] LIKE @TeamName;
 GO
