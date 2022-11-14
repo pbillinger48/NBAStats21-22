@@ -73,6 +73,7 @@
     <Content Include="Sql\Procedures\NBA.GetAllTeams.sql" />
     <Content Include="Sql\Procedures\NBA.GetAllPlayers.sql" />
     <Content Include="Sql\Procedures\NBA.RetrievePlayersMonthStats.sql" />
+    <Content Include="Sql\Procedures\NBA.RetrievePlayerVSOpponentStats.sql" />
     <Content Include="Sql\Procedures\NBA.RetrieveRecordBasedOnMinutes.sql" />
     <Content Include="Sql\Procedures\NBA.RetrieveTeamSeasonSummaries.sql" />
     <Content Include="Sql\Procedures\NBA.RetrievePlayersSeasonStats.sql" />

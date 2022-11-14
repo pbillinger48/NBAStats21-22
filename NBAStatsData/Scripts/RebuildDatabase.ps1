@@ -50,6 +50,9 @@ Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Pro
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Procedures\NBA.GetAllTeams.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Procedures\NBA.RetrievePlayersSeasonStats.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Procedures\NBA.RetrieveTeamSeasonSummaries.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Procedures\NBA.RetrievePlayersMonthStats.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Procedures\NBA.RetrieveRecordBasedOnMinutes.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Procedures\NBA.RetrievePlayerVSOpponentStats.sql"
 
 Write-Host "Inserting data..."
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Data\NBA.CreateTeam.sql"
