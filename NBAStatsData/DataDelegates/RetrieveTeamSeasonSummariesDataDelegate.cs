@@ -23,7 +23,7 @@ namespace NBAStatsData.DataDelegates
             while (reader.Read())
             {
                 TeamSeasonSummariesList.Add(new TeamSeasonSummary(
-                   reader.GetString("TeamName"),
+                   reader.GetString("Name"),
                    reader.GetInt32("Wins"),
                    reader.GetInt32("Losses"),
                    reader.GetValue<Decimal>("AveragePointsScored"),
