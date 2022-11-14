@@ -19,7 +19,7 @@ WITH SourceCTE AS (
 		) AwayTeam ON HomeTeam.GameID = AwayTeam.GameID
 		INNER JOIN NBA.GameStats GS ON GS.GameID = HomeTeam.GameID
 		INNER JOIN NBA.Player P ON P.PlayerID = GS.PlayerID
-		WHERE P.[Name] = @PlayerName AND GS.[Minutes] > @MinutesThreshold
+		WHERE P.[Name] Like @PlayerName AND GS.[Minutes] > @MinutesThreshold
 )
 
 SELECT P.[Name],@MinutesThreshold AS MinutesThreshold, COUNT(*) AS GamesPlayed, 
