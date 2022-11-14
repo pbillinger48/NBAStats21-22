@@ -36,6 +36,7 @@ namespace _21_22NBAStats
             this.coachesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testPanelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uxMainPanel = new System.Windows.Forms.Panel();
+            this.seasonSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uxMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +73,8 @@ namespace _21_22NBAStats
             // 
             // teamsToolStripMenuItem
             // 
+            this.teamsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.seasonSummaryToolStripMenuItem});
             this.teamsToolStripMenuItem.Name = "teamsToolStripMenuItem";
             this.teamsToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.teamsToolStripMenuItem.Text = "Teams";
@@ -85,8 +88,9 @@ namespace _21_22NBAStats
             // testPanelsToolStripMenuItem
             // 
             this.testPanelsToolStripMenuItem.Name = "testPanelsToolStripMenuItem";
-            this.testPanelsToolStripMenuItem.Size = new System.Drawing.Size(94, 24);
-            this.testPanelsToolStripMenuItem.Text = "Test Panels";
+            this.testPanelsToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
+            this.testPanelsToolStripMenuItem.Text = "Home";
+            this.testPanelsToolStripMenuItem.Click += new System.EventHandler(this.testPanelsToolStripMenuItem_Click);
             // 
             // uxMainPanel
             // 
@@ -94,6 +98,13 @@ namespace _21_22NBAStats
             this.uxMainPanel.Name = "uxMainPanel";
             this.uxMainPanel.Size = new System.Drawing.Size(1246, 512);
             this.uxMainPanel.TabIndex = 2;
+            // 
+            // seasonSummaryToolStripMenuItem
+            // 
+            this.seasonSummaryToolStripMenuItem.Name = "seasonSummaryToolStripMenuItem";
+            this.seasonSummaryToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.seasonSummaryToolStripMenuItem.Text = "Season Summary";
+            this.seasonSummaryToolStripMenuItem.Click += new System.EventHandler(this.seasonSummaryToolStripMenuItem_Click);
             // 
             // HomeForm
             // 
@@ -122,5 +133,6 @@ namespace _21_22NBAStats
         private System.Windows.Forms.Panel uxMainPanel;
         private System.Windows.Forms.ToolStripMenuItem testPanelsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem playerStatsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem seasonSummaryToolStripMenuItem;
     }
 }

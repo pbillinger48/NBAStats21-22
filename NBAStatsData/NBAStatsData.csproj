@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataDelegates\GetAllTeamsDataDelegate.cs" />
+    <Compile Include="DataDelegates\GetAllPlayersDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveTeamSeasonSummariesDataDelegate.cs" />
     <Compile Include="SqlTeamSeasonSummaryRepository.cs" />
     <Compile Include="DataDelegates\GetPlayerDataDelegate.cs" />
@@ -68,6 +70,8 @@
     <Content Include="Sql\Data\NBA.CreateCoach.sql" />
     <Content Include="Sql\Data\NBA.CreateTeamType.sql" />
     <Content Include="Sql\Data\NBA.CreateTeam.sql" />
+    <Content Include="Sql\Procedures\NBA.GetAllTeams.sql" />
+    <Content Include="Sql\Procedures\NBA.GetAllPlayers.sql" />
     <Content Include="Sql\Procedures\NBA.RetrieveTeamSeasonSummaries.sql" />
     <Content Include="Sql\Procedures\NBA.RetrievePlayersSeasonStats.sql" />
     <Content Include="Sql\Procedures\NBA.GetPlayer.sql" />

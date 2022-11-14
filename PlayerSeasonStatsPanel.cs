@@ -24,11 +24,9 @@ namespace _21_22NBAStats
         private void uxRunPlayerSeasonStats_Click(object sender, EventArgs e)
         {
             IPlayerSeasonStatsRepository repo;
-            TransactionScope transaction;
 
             repo = new SqlPlayerSeasonStatsRepository(connectionString);
 
-            transaction = new TransactionScope();
             decimal? PPGMax = 0;
             decimal? PPGMin = 0;
             decimal? RPGMax = 0;
@@ -54,6 +52,7 @@ namespace _21_22NBAStats
             else
             {
                 MessageBox.Show("PointsPG minimum value must be lower than the maximum value");
+                return;
             }
             if (uxRPGMax.Value >= uxRPGMin.Value)
             {
@@ -63,6 +62,7 @@ namespace _21_22NBAStats
             else
             {
                 MessageBox.Show("ReboundsPG minimum value must be lower than the maximum value");
+                return;
             }
             if (uxAPGMax.Value >= uxAPGMin.Value)
             {
@@ -72,6 +72,7 @@ namespace _21_22NBAStats
             else
             {
                 MessageBox.Show("AssistsPG minimum value must be lower than the maximum value");
+                return;
             }
             if (uxBPGMax.Value >= uxBPGMin.Value)
             {
@@ -81,6 +82,7 @@ namespace _21_22NBAStats
             else
             {
                 MessageBox.Show("BlocksPG minimum value must be lower than the maximum value");
+                return;
             }
             if (uxSPGMax.Value >= uxSPGMin.Value)
             {
@@ -90,6 +92,7 @@ namespace _21_22NBAStats
             else
             {
                 MessageBox.Show("StealsPG minimum value must be lower than the maximum value");
+                return;
             }
             if (uxTPGMax.Value >= uxTPGMin.Value)
             {
@@ -99,6 +102,7 @@ namespace _21_22NBAStats
             else
             {
                 MessageBox.Show("TurnoversPG minimum value must be lower than the maximum value");
+                return;
             }
             if (uxMPGMax.Value >= uxMPGMin.Value)
             {
@@ -108,6 +112,15 @@ namespace _21_22NBAStats
             else
             {
                 MessageBox.Show("MinutesPG minimum value must be lower than the maximum value");
+                return;
+            }
+            if ((string)uxPlayerName.SelectedValue != "")
+            {
+                playerName = (string)uxPlayerName.SelectedValue;
+            }
+            if ((string)uxTeamName.SelectedValue != "")
+            {
+                teamName = (string)uxTeamName.SelectedValue;
             }
 
             PPGMin = PPGMin == 0 ? null : PPGMin;
@@ -124,7 +137,7 @@ namespace _21_22NBAStats
             TPGMin = TPGMin == 0 ? null : TPGMin;
             MPGMax = MPGMax == 0 ? null : MPGMax;
             MPGMin = MPGMin == 0 ? null : MPGMin;
-            IReadOnlyList<PlayerSeasonStats> list = repo.RetrievePlayers(PPGMin,PPGMax,RPGMax,RPGMin,
+            IReadOnlyList<PlayerSeasonStats> list = repo.RetrievePlayers(playerName, teamName, PPGMin,PPGMax,RPGMax,RPGMin,
                 APGMax, APGMin, BPGMax,BPGMin, SPGMax, SPGMin, TPGMax, TPGMin, MPGMax, MPGMin);
 
             DataTable table = new DataTable();
@@ -142,6 +155,58 @@ namespace _21_22NBAStats
             {
                 table.Rows.Add(item.Name, item.PointsPerGame, item.ReboundsPerGame, item.AssistsPerGame, item.BlocksPerGame,
                     item.StealsPerGame , item.TurnoversPerGame, item.MinutesPerGame, item.CurrentTeamName);
+            }
+            foreach (var col in uxDataGrid.Columns)
+            {
+                DataGridViewColumn column = (DataGridViewColumn)col;
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            }
+            uxDataGrid.DataSource = null;
+            uxDataGrid.DataSource = table;
+        }
+
+        private void PlayerSeasonStatsPanel_Load(object sender, EventArgs e)
+        {
+            var repo1 = new SqlPlayerSeasonStatsRepository(connectionString);
+            IReadOnlyList<Player> list1 = repo1.GetAllPlayers();
+            var playersList = new List<string>();
+            playersList.Add("");
+            foreach(var item in list1)
+            {
+                playersList.Add(item.Name);
+            }
+            uxPlayerName.DataSource = null;
+            uxPlayerName.DataSource = playersList;
+            
+            var repo2 = new SqlTeamSeasonSummaryRepository(connectionString);
+            IReadOnlyList<Team> list2 = repo2.GetAllTeams();
+            var teamsList = new List<string>();
+            teamsList.Add("");
+            foreach (var item in list2)
+            {
+                teamsList.Add(item.Name);
+            }
+            uxTeamName.DataSource = null;
+            uxTeamName.DataSource = teamsList;
+
+            IReadOnlyList<PlayerSeasonStats> list = repo1.RetrievePlayers("", "", null, null, null, null,
+                null, null, null, null, null, null, null, null, null, null);
+
+            DataTable table = new DataTable();
+            table.Columns.Add("PlayerName", typeof(string));
+            table.Columns.Add("PointsPG", typeof(decimal));
+            table.Columns.Add("ReboundsPG", typeof(decimal));
+            table.Columns.Add("AssistsPG", typeof(decimal));
+            table.Columns.Add("BlocksPG", typeof(decimal));
+            table.Columns.Add("StealsPG", typeof(decimal));
+            table.Columns.Add("TurnoversPG", typeof(decimal));
+            table.Columns.Add("MinutesPG", typeof(decimal));
+            table.Columns.Add("TeamName", typeof(string));
+
+            foreach (var item in list)
+            {
+                table.Rows.Add(item.Name, item.PointsPerGame, item.ReboundsPerGame, item.AssistsPerGame, item.BlocksPerGame,
+                    item.StealsPerGame, item.TurnoversPerGame, item.MinutesPerGame, item.CurrentTeamName);
             }
             foreach (var col in uxDataGrid.Columns)
             {

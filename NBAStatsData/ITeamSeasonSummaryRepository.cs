@@ -15,6 +15,12 @@ namespace NBAStatsData
         /// <returns>
         /// <see cref="IReadOnlyList{TeamSeasonSummary}"/> containing all Teams.
         /// </returns>
-        IReadOnlyList<TeamSeasonSummary> RetrievePlayers();
+        IReadOnlyList<TeamSeasonSummary> RetrieveTeamSeasonSummaries();
+
+        /// <summary>
+        /// Gets all Teams in the Team table
+        /// </summary>
+        /// <returns>Gets all teams</returns>
+        IReadOnlyList<Team> GetAllTeams();
     }
 }

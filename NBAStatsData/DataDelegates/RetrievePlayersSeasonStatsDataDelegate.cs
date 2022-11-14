@@ -11,6 +11,8 @@ namespace NBAStatsData.DataDelegates
 {
     public class RetrievePlayersSeasonStatsDataDelegate : DataReaderDelegate<IReadOnlyList<PlayerSeasonStats>>
     {
+        private readonly string PlayerName;
+        private readonly string TeamName;
         private readonly decimal? PPGMin;
 
         private readonly decimal? PPGMax;
@@ -27,11 +29,14 @@ namespace NBAStatsData.DataDelegates
         private readonly decimal? TPGMin;
         private readonly decimal? MPGMax;
         private readonly decimal? MPGMin;
-        public RetrievePlayersSeasonStatsDataDelegate(decimal? ppgMin, decimal? ppgMax, decimal? rpgMax, decimal? rpgMin,
+        public RetrievePlayersSeasonStatsDataDelegate(string playerName, string teamName, decimal? ppgMin, decimal? ppgMax, 
+            decimal? rpgMax, decimal? rpgMin,
                 decimal? apgMax, decimal? apgMin, decimal? bpgMax, decimal? bpgMin, decimal? spgMax, decimal? spgMin,
                 decimal? tpgMax, decimal? tpgMin, decimal? mpgMax, decimal? mpgMin)
          : base("NBA.RetrievePlayersSeasonStats")
         {
+            PlayerName = playerName;
+            TeamName = teamName;
             PPGMin = ppgMin;
             PPGMax = ppgMax;
             RPGMin = rpgMin;
@@ -54,8 +59,10 @@ namespace NBAStatsData.DataDelegates
         {
             base.PrepareCommand(command);
 
-            if(PPGMin != null)command.Parameters.AddWithValue("PPGMin", PPGMin);
-            if(PPGMax != null) command.Parameters.AddWithValue("PPGMax", PPGMax);
+            if (PlayerName != "") command.Parameters.AddWithValue("Name", PlayerName);
+            if (TeamName != "") command.Parameters.AddWithValue("TeamName", TeamName);
+            if (PPGMin != null)command.Parameters.AddWithValue("PPGMin", PPGMin);
+            if (PPGMax != null) command.Parameters.AddWithValue("PPGMax", PPGMax);
             if (RPGMin != null) command.Parameters.AddWithValue("RPGMin", RPGMin);
             if (RPGMax != null) command.Parameters.AddWithValue("RPGMax", RPGMax);
             if (APGMin != null) command.Parameters.AddWithValue("APGMin", APGMin);

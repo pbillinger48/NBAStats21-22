@@ -49,12 +49,18 @@ namespace NBAStatsData
             return executor.ExecuteReader(d);
         }
 
-        public IReadOnlyList<PlayerSeasonStats> RetrievePlayers(decimal? ppgMin, decimal? ppgMax, decimal? RPGMax, decimal? RPGMin,
+        public IReadOnlyList<PlayerSeasonStats> RetrievePlayers(string playerName, string teamName,
+            decimal? ppgMin, decimal? ppgMax, decimal? RPGMax, decimal? RPGMin,
                 decimal? APGMax, decimal? APGMin, decimal? BPGMax, decimal? BPGMin, decimal? SPGMax, decimal? SPGMin,
                 decimal? TPGMax, decimal? TPGMin, decimal? MPGMax, decimal? MPGMin)
         {
-            return executor.ExecuteReader(new RetrievePlayersSeasonStatsDataDelegate(ppgMin,ppgMax, RPGMax, RPGMin,
+            return executor.ExecuteReader(new RetrievePlayersSeasonStatsDataDelegate(playerName, teamName, ppgMin,ppgMax, RPGMax, RPGMin,
                 APGMax, APGMin, BPGMax, BPGMin, SPGMax, SPGMin, TPGMax, TPGMin, MPGMax, MPGMin));
+        }
+
+        public IReadOnlyList<Player> GetAllPlayers()
+        {
+            return executor.ExecuteReader(new GetAllPlayersDataDelegate());
         }
     }
 }

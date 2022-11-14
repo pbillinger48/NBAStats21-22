@@ -59,6 +59,10 @@ namespace _21_22NBAStats
             this.label14 = new System.Windows.Forms.Label();
             this.uxMPGMin = new System.Windows.Forms.NumericUpDown();
             this.uxMPGMax = new System.Windows.Forms.NumericUpDown();
+            this.uxPlayerName = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.uxTeamName = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.uxDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uxPPGMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uxPPGMax)).BeginInit();
@@ -95,9 +99,9 @@ namespace _21_22NBAStats
             // 
             // uxRunPlayerSeasonStats
             // 
-            this.uxRunPlayerSeasonStats.Location = new System.Drawing.Point(1022, 459);
+            this.uxRunPlayerSeasonStats.Location = new System.Drawing.Point(973, 459);
             this.uxRunPlayerSeasonStats.Name = "uxRunPlayerSeasonStats";
-            this.uxRunPlayerSeasonStats.Size = new System.Drawing.Size(184, 43);
+            this.uxRunPlayerSeasonStats.Size = new System.Drawing.Size(233, 43);
             this.uxRunPlayerSeasonStats.TabIndex = 1;
             this.uxRunPlayerSeasonStats.Text = "Season Stats Per Player";
             this.uxRunPlayerSeasonStats.UseVisualStyleBackColor = true;
@@ -112,7 +116,6 @@ namespace _21_22NBAStats
             0,
             0});
             this.uxPPGMin.Name = "uxPPGMin";
-            this.uxPPGMin.ReadOnly = true;
             this.uxPPGMin.Size = new System.Drawing.Size(56, 22);
             this.uxPPGMin.TabIndex = 2;
             this.uxPPGMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -126,7 +129,6 @@ namespace _21_22NBAStats
             0,
             0});
             this.uxPPGMax.Name = "uxPPGMax";
-            this.uxPPGMax.ReadOnly = true;
             this.uxPPGMax.Size = new System.Drawing.Size(56, 22);
             this.uxPPGMax.TabIndex = 3;
             this.uxPPGMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -176,7 +178,6 @@ namespace _21_22NBAStats
             0,
             0});
             this.uxRPGMax.Name = "uxRPGMax";
-            this.uxRPGMax.ReadOnly = true;
             this.uxRPGMax.Size = new System.Drawing.Size(56, 22);
             this.uxRPGMax.TabIndex = 7;
             this.uxRPGMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -190,7 +191,6 @@ namespace _21_22NBAStats
             0,
             0});
             this.uxRPGMin.Name = "uxRPGMin";
-            this.uxRPGMin.ReadOnly = true;
             this.uxRPGMin.Size = new System.Drawing.Size(56, 22);
             this.uxRPGMin.TabIndex = 6;
             this.uxRPGMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -222,7 +222,6 @@ namespace _21_22NBAStats
             0,
             0});
             this.uxAPGMax.Name = "uxAPGMax";
-            this.uxAPGMax.ReadOnly = true;
             this.uxAPGMax.Size = new System.Drawing.Size(56, 22);
             this.uxAPGMax.TabIndex = 11;
             this.uxAPGMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -236,7 +235,6 @@ namespace _21_22NBAStats
             0,
             0});
             this.uxAPGMin.Name = "uxAPGMin";
-            this.uxAPGMin.ReadOnly = true;
             this.uxAPGMin.Size = new System.Drawing.Size(56, 22);
             this.uxAPGMin.TabIndex = 10;
             this.uxAPGMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -268,7 +266,6 @@ namespace _21_22NBAStats
             0,
             0});
             this.uxBPGMax.Name = "uxBPGMax";
-            this.uxBPGMax.ReadOnly = true;
             this.uxBPGMax.Size = new System.Drawing.Size(56, 22);
             this.uxBPGMax.TabIndex = 15;
             this.uxBPGMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -282,7 +279,6 @@ namespace _21_22NBAStats
             0,
             0});
             this.uxBPGMin.Name = "uxBPGMin";
-            this.uxBPGMin.ReadOnly = true;
             this.uxBPGMin.Size = new System.Drawing.Size(56, 22);
             this.uxBPGMin.TabIndex = 14;
             this.uxBPGMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -314,7 +310,6 @@ namespace _21_22NBAStats
             0,
             0});
             this.uxSPGMax.Name = "uxSPGMax";
-            this.uxSPGMax.ReadOnly = true;
             this.uxSPGMax.Size = new System.Drawing.Size(56, 22);
             this.uxSPGMax.TabIndex = 19;
             this.uxSPGMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -328,7 +323,6 @@ namespace _21_22NBAStats
             0,
             0});
             this.uxSPGMin.Name = "uxSPGMin";
-            this.uxSPGMin.ReadOnly = true;
             this.uxSPGMin.Size = new System.Drawing.Size(56, 22);
             this.uxSPGMin.TabIndex = 18;
             this.uxSPGMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -360,7 +354,6 @@ namespace _21_22NBAStats
             0,
             0});
             this.uxTPGMax.Name = "uxTPGMax";
-            this.uxTPGMax.ReadOnly = true;
             this.uxTPGMax.Size = new System.Drawing.Size(56, 22);
             this.uxTPGMax.TabIndex = 23;
             this.uxTPGMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -374,7 +367,6 @@ namespace _21_22NBAStats
             0,
             0});
             this.uxTPGMin.Name = "uxTPGMin";
-            this.uxTPGMin.ReadOnly = true;
             this.uxTPGMin.Size = new System.Drawing.Size(56, 22);
             this.uxTPGMin.TabIndex = 22;
             this.uxTPGMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -406,7 +398,6 @@ namespace _21_22NBAStats
             0,
             0});
             this.uxMPGMin.Name = "uxMPGMin";
-            this.uxMPGMin.ReadOnly = true;
             this.uxMPGMin.Size = new System.Drawing.Size(56, 22);
             this.uxMPGMin.TabIndex = 27;
             this.uxMPGMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -420,15 +411,52 @@ namespace _21_22NBAStats
             0,
             0});
             this.uxMPGMax.Name = "uxMPGMax";
-            this.uxMPGMax.ReadOnly = true;
             this.uxMPGMax.Size = new System.Drawing.Size(56, 22);
             this.uxMPGMax.TabIndex = 26;
             this.uxMPGMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // PlayerPanel
+            // uxPlayerName
+            // 
+            this.uxPlayerName.FormattingEnabled = true;
+            this.uxPlayerName.Location = new System.Drawing.Point(181, 467);
+            this.uxPlayerName.Name = "uxPlayerName";
+            this.uxPlayerName.Size = new System.Drawing.Size(260, 24);
+            this.uxPlayerName.TabIndex = 30;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(70, 470);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(89, 17);
+            this.label15.TabIndex = 31;
+            this.label15.Text = "Player Name";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(491, 470);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(85, 17);
+            this.label16.TabIndex = 33;
+            this.label16.Text = "Team Name";
+            // 
+            // uxTeamName
+            // 
+            this.uxTeamName.FormattingEnabled = true;
+            this.uxTeamName.Location = new System.Drawing.Point(602, 467);
+            this.uxTeamName.Name = "uxTeamName";
+            this.uxTeamName.Size = new System.Drawing.Size(260, 24);
+            this.uxTeamName.TabIndex = 32;
+            // 
+            // PlayerSeasonStatsPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.uxTeamName);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.uxPlayerName);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.uxMPGMin);
@@ -459,8 +487,9 @@ namespace _21_22NBAStats
             this.Controls.Add(this.uxPPGMin);
             this.Controls.Add(this.uxRunPlayerSeasonStats);
             this.Controls.Add(this.uxDataGrid);
-            this.Name = "PlayerPanel";
+            this.Name = "PlayerSeasonStatsPanel";
             this.Size = new System.Drawing.Size(1246, 512);
+            this.Load += new System.EventHandler(this.PlayerSeasonStatsPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uxDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uxPPGMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uxPPGMax)).EndInit();
@@ -513,5 +542,9 @@ namespace _21_22NBAStats
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.NumericUpDown uxMPGMin;
         private System.Windows.Forms.NumericUpDown uxMPGMax;
+        private System.Windows.Forms.ComboBox uxPlayerName;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox uxTeamName;
     }
 }

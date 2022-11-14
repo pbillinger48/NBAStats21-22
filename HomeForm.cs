@@ -33,5 +33,21 @@ namespace _21_22NBAStats
             uxMainPanel.Controls.Add(panel);
             panel.Show();
         }
+
+        private void seasonSummaryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            uxMainPanel.Controls.Clear();
+            TeamPanel panel = new TeamPanel() { Dock = DockStyle.Fill };
+            uxMainPanel.Controls.Add(panel);
+            panel.Show();
+        }
+
+        private void testPanelsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            uxMainPanel.Controls.Clear();
+            HomePanel panel = new HomePanel() { Dock = DockStyle.Fill };
+            uxMainPanel.Controls.Add(panel);
+            panel.Show();
+        }
     }
 }

@@ -15,7 +15,8 @@ namespace NBAStatsData
         /// <returns>
         /// <see cref="IReadOnlyList{Player}"/> containing all Players.
         /// </returns>
-        IReadOnlyList<PlayerSeasonStats> RetrievePlayers(decimal? ppgMin, decimal? ppgMax, decimal? RPGMax, decimal? RPGMin,
+        IReadOnlyList<PlayerSeasonStats> RetrievePlayers(string playerName, string teamName,
+            decimal? ppgMin, decimal? ppgMax, decimal? RPGMax, decimal? RPGMin,
                 decimal? APGMax, decimal? APGMin, decimal? BPGMax, decimal? BPGMin, decimal? SPGMax, decimal? SPGMin,
                 decimal? TPGMax, decimal? TPGMin, decimal? MPGMax, decimal? MPGMin);
 
@@ -52,5 +53,11 @@ namespace NBAStatsData
         /// The resulting instance of <see cref="Player"/>.
         /// </returns>
         Player CreatePlayer(string firstName, string lastName);
+
+        /// <summary>
+        /// Gets all players from the Player table
+        /// </summary>
+        /// <returns>All players in the database</returns>
+        IReadOnlyList<Player> GetAllPlayers();
     }
 }

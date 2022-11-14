@@ -30,6 +30,7 @@ namespace _21_22NBAStats
         private void InitializeComponent()
         {
             this.uxHomeLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // uxHomeLabel
@@ -42,11 +43,22 @@ namespace _21_22NBAStats
             this.uxHomeLabel.TabIndex = 1;
             this.uxHomeLabel.Text = "2021-22 NBA Statistics";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 480);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(180, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "*Note: PG = Per Game";
+            // 
             // HomePanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.uxHomeLabel);
             this.Name = "HomePanel";
             this.Size = new System.Drawing.Size(1246, 512);
@@ -57,5 +69,6 @@ namespace _21_22NBAStats
 
         #endregion
         private System.Windows.Forms.Label uxHomeLabel;
+        private System.Windows.Forms.Label label1;
     }
 }

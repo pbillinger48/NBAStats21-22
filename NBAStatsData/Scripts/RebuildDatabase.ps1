@@ -46,6 +46,8 @@ Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Tab
 Write-Host "Stored procedures..."
 #Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "NBAStatsData\Sql\Procedures\NBA.CreateNBA.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Procedures\NBA.GetPlayer.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Procedures\NBA.GetAllPlayers.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Procedures\NBA.GetAllTeams.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Procedures\NBA.RetrievePlayersSeasonStats.sql"
 
 Write-Host "Inserting data..."
