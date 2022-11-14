@@ -156,11 +156,6 @@ namespace _21_22NBAStats
                 table.Rows.Add(item.Name, item.PointsPerGame, item.ReboundsPerGame, item.AssistsPerGame, item.BlocksPerGame,
                     item.StealsPerGame , item.TurnoversPerGame, item.MinutesPerGame, item.CurrentTeamName);
             }
-            foreach (var col in uxDataGrid.Columns)
-            {
-                DataGridViewColumn column = (DataGridViewColumn)col;
-                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-            }
             uxDataGrid.DataSource = null;
             uxDataGrid.DataSource = table;
         }
@@ -207,11 +202,6 @@ namespace _21_22NBAStats
             {
                 table.Rows.Add(item.Name, item.PointsPerGame, item.ReboundsPerGame, item.AssistsPerGame, item.BlocksPerGame,
                     item.StealsPerGame, item.TurnoversPerGame, item.MinutesPerGame, item.CurrentTeamName);
-            }
-            foreach (var col in uxDataGrid.Columns)
-            {
-                DataGridViewColumn column = (DataGridViewColumn)col;
-                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             }
             uxDataGrid.DataSource = null;
             uxDataGrid.DataSource = table;

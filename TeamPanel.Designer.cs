@@ -85,7 +85,7 @@ namespace _21_22NBAStats
             // 
             // uxTeamSeasonStats
             // 
-            this.uxTeamSeasonStats.Location = new System.Drawing.Point(1040, 466);
+            this.uxTeamSeasonStats.Location = new System.Drawing.Point(1011, 466);
             this.uxTeamSeasonStats.Name = "uxTeamSeasonStats";
             this.uxTeamSeasonStats.Size = new System.Drawing.Size(184, 43);
             this.uxTeamSeasonStats.TabIndex = 2;
@@ -96,7 +96,7 @@ namespace _21_22NBAStats
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(549, 480);
+            this.label16.Location = new System.Drawing.Point(577, 479);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(85, 17);
             this.label16.TabIndex = 57;
@@ -105,7 +105,7 @@ namespace _21_22NBAStats
             // uxTeamName
             // 
             this.uxTeamName.FormattingEnabled = true;
-            this.uxTeamName.Location = new System.Drawing.Point(660, 477);
+            this.uxTeamName.Location = new System.Drawing.Point(688, 476);
             this.uxTeamName.Name = "uxTeamName";
             this.uxTeamName.Size = new System.Drawing.Size(260, 24);
             this.uxTeamName.TabIndex = 56;

@@ -1,4 +1,5 @@
 ﻿CREATE OR ALTER PROCEDURE NBA.RetrieveTeamSeasonSummaries
+	@TeamName NVARCHAR(128) = '%'
 AS
 WITH SourceCTE AS (
 SELECT IIF(HomeTeam.HomeScore > AwayTeam.AwayScore, 1, 0) as HomeWins,
@@ -59,5 +60,6 @@ SELECT T.[Name], SUM(HomeWins) +
 		WHERE T.TeamID = cte2.AwayID
 		)) as GamesPlayed
 FROM SourceCTE INNER JOIN NBA.Team T ON SourceCTE.HomeID = T.TeamID
+WHERE T.[Name] LIKE @TeamName
 GROUP BY T.TeamID, T.[Name]
 ORDER BY Wins DESC;

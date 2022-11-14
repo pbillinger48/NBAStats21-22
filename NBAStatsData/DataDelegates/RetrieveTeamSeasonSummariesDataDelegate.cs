@@ -11,9 +11,18 @@ namespace NBAStatsData.DataDelegates
 {
     public class RetrieveTeamSeasonSummariesDataDelegate: DataReaderDelegate<IReadOnlyList<TeamSeasonSummary>>
     {
-        public RetrieveTeamSeasonSummariesDataDelegate()
+        private readonly string TeamName;
+        public RetrieveTeamSeasonSummariesDataDelegate(string teamName)
          : base("NBA.RetrieveTeamSeasonSummaries")
         {
+            TeamName = teamName;
+        }
+
+        public override void PrepareCommand(SqlCommand command)
+        {
+            base.PrepareCommand(command);
+
+            if (TeamName != "") command.Parameters.AddWithValue("TeamName", TeamName);
         }
 
         public override IReadOnlyList<TeamSeasonSummary> Translate(SqlCommand command, IDataRowReader reader)

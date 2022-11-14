@@ -17,9 +17,9 @@ namespace NBAStatsData
         {
             executor = new SqlCommandExecutor(connectionString);
         }
-        public IReadOnlyList<TeamSeasonSummary> RetrieveTeamSeasonSummaries()
+        public IReadOnlyList<TeamSeasonSummary> RetrieveTeamSeasonSummaries(string teamName)
         {
-            return executor.ExecuteReader(new RetrieveTeamSeasonSummariesDataDelegate());
+            return executor.ExecuteReader(new RetrieveTeamSeasonSummariesDataDelegate(teamName));
         }
 
         public IReadOnlyList<Team> GetAllTeams()

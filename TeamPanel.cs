@@ -25,7 +25,7 @@ namespace _21_22NBAStats
         {
             var repo = new SqlTeamSeasonSummaryRepository(connectionString);
 
-            IReadOnlyList<TeamSeasonSummary> list = repo.RetrieveTeamSeasonSummaries();
+            IReadOnlyList<TeamSeasonSummary> list = repo.RetrieveTeamSeasonSummaries("");
 
             DataTable table = new DataTable();
             table.Columns.Add("TeamName", typeof(string));
@@ -38,11 +38,6 @@ namespace _21_22NBAStats
             foreach (var item in list)
             {
                 table.Rows.Add(item.TeamName, item.Wins, item.Losses, item.PPGScored, item.PPGGivenUp, item.GamesPlayed);
-            }
-            foreach (var col in uxDataGrid.Columns)
-            {
-                DataGridViewColumn column = (DataGridViewColumn)col;
-                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             }
             uxDataGrid.DataSource = null;
             uxDataGrid.DataSource = table;
@@ -62,8 +57,13 @@ namespace _21_22NBAStats
         private void uxTeamSeasonStats_Click(object sender, EventArgs e)
         {
             var repo = new SqlTeamSeasonSummaryRepository(connectionString);
+            string teamName = "";
+            if ((string)uxTeamName.SelectedValue != "")
+            {
+                teamName = (string)uxTeamName.SelectedValue;
+            }
 
-            IReadOnlyList<TeamSeasonSummary> list = repo.RetrieveTeamSeasonSummaries();
+            IReadOnlyList<TeamSeasonSummary> list = repo.RetrieveTeamSeasonSummaries(teamName);
 
             DataTable table = new DataTable();
             table.Columns.Add("TeamName", typeof(string));
@@ -76,11 +76,6 @@ namespace _21_22NBAStats
             foreach (var item in list)
             {
                 table.Rows.Add(item.TeamName, item.Wins, item.Losses, item.PPGScored, item.PPGGivenUp, item.GamesPlayed);
-            }
-            foreach (var col in uxDataGrid.Columns)
-            {
-                DataGridViewColumn column = (DataGridViewColumn)col;
-                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             }
             uxDataGrid.DataSource = null;
             uxDataGrid.DataSource = table;
