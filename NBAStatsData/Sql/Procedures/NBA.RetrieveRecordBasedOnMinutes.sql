@@ -1,4 +1,5 @@
-﻿CREATE OR ALTER PROCEDURE NBA.RetrievePlayersSeasonStats
+﻿CREATE OR ALTER PROCEDURE NBA.RetrieveRecordBasedOnMinutes
+
 	@PlayerName NVARCHAR(128) = '%',
 	@MinutesThreshold DECIMAL(7,1) = 0	
 AS

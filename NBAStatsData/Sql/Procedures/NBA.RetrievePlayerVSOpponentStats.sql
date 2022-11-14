@@ -1,4 +1,4 @@
-﻿CREATE OR ALTER PROCEDURE NBA.RetrievePlayersSeasonStats
+﻿CREATE OR ALTER PROCEDURE NBA.RetrievePlayerVSOpponentStats
 	@PlayerName NVARCHAR(128) = '%',
 	@OpponentName NVARCHAR(128) = '%'
 AS
