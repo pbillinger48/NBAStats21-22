@@ -57,5 +57,13 @@ namespace _21_22NBAStats
             uxMainPanel.Controls.Add(panel);
             panel.Show();
         }
+
+        private void otherPlayerQueriesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            uxMainPanel.Controls.Clear();
+            OtherPlayerQueriesPanel panel = new OtherPlayerQueriesPanel() { Dock = DockStyle.Fill };
+            uxMainPanel.Controls.Add(panel);
+            panel.Show();
+        }
     }
 }
