@@ -19,12 +19,13 @@ From Nba.GameStats GS
 INNER JOIN Nba.Player P ON P.PlayerID = GS.PlayerID 
 INNER JOIN Nba.Team T ON T.TeamID = GS.TeamID
 INNER JOIN Nba.Game G ON G.GameID = GS.GameID
-WHERE GS.Minutes > 0 AND MONTH(G.Date) = @MONTH
+WHERE GS.[Minutes] > 0 AND MONTH(G.Date) = @MONTH
 GROUP BY P.[Name]
 )
-SELECT  ROW_NUMBER() OVER(ORDER BY PointsPG DESC) AS [Rank], V.PlayerName, V.PointsPG, V.ReboundsPG, V.AssistsPG, V.BlocksPG, V.StealsPG, V.TurnoversPG, V.MinutesPG, V.GamesPlayed, T.[Name] AS TeamName
+SELECT  CAST(ROW_NUMBER() OVER(ORDER BY PointsPG DESC) AS INT) AS [Rank], V.PlayerName, V.PointsPG, V.ReboundsPG, V.AssistsPG, V.BlocksPG, V.StealsPG, V.TurnoversPG, V.MinutesPG, V.GamesPlayed, T.[Name] AS TeamName
 FROM PlayerStatsValues V
 INNER JOIN NBA.Player P ON P.[Name] = V.PlayerName
 INNER JOIN NBA.Team T ON T.TeamID = P.CurrentTeamID
-ORDER BY PointsPG DESC
+WHERE P.[Name] LIKE @Name
+ORDER BY PointsPG DESC;
 

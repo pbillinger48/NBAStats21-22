@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="DataDelegates\GetAllTeamsDataDelegate.cs" />
     <Compile Include="DataDelegates\GetAllPlayersDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrievePlayersMonthStatsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveTeamSeasonSummariesDataDelegate.cs" />
+    <Compile Include="Models\PlayerMonthStats.cs" />
     <Compile Include="SqlTeamSeasonSummaryRepository.cs" />
     <Compile Include="DataDelegates\GetPlayerDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePlayersSeasonStatsDataDelegate.cs" />

@@ -11,7 +11,6 @@ namespace NBAStatsData.DataDelegates
 {
     class GetAllPlayersDataDelegate : DataReaderDelegate<IReadOnlyList<Player>>
     {
-        private readonly string name;
 
         public GetAllPlayersDataDelegate()
            : base("NBA.GetAllPlayers")
