@@ -17,9 +17,11 @@ namespace NBAStatsData
         {
             executor = new SqlCommandExecutor(connectionString);
         }
-        public IReadOnlyList<TeamSeasonSummary> RetrieveTeamSeasonSummaries(string teamName)
+        public IReadOnlyList<TeamSeasonSummary> RetrieveTeamSeasonSummaries(string teamName, int? winsMin, int? winsMax, int? lossesMin, int? lossesMax, decimal? ppgScoredMin, decimal? ppgScoredMax,
+            decimal? ppgAgainstMin, decimal? ppgAgainstMax, int? gamesPlayedMin, int? gamesPlayedMax)
         {
-            return executor.ExecuteReader(new RetrieveTeamSeasonSummariesDataDelegate(teamName));
+            return executor.ExecuteReader(new RetrieveTeamSeasonSummariesDataDelegate(teamName, winsMin, winsMax, lossesMin, lossesMax, ppgScoredMin, ppgScoredMax, ppgAgainstMin, ppgAgainstMax,
+                gamesPlayedMin, gamesPlayedMax));
         }
 
         public IReadOnlyList<Team> GetAllTeams()

@@ -1,4 +1,5 @@
 ﻿CREATE OR ALTER PROCEDURE NBA.RetrievePlayersMonthStats
+	@Name NVARCHAR(128) = '%',
 	@MONTH INT = 1
 AS
 WITH PlayerStatsValues AS (

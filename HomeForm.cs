@@ -37,7 +37,7 @@ namespace _21_22NBAStats
         private void seasonSummaryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             uxMainPanel.Controls.Clear();
-            TeamPanel panel = new TeamPanel() { Dock = DockStyle.Fill };
+            TeamSeasonSummaryPanel panel = new TeamSeasonSummaryPanel() { Dock = DockStyle.Fill };
             uxMainPanel.Controls.Add(panel);
             panel.Show();
         }
@@ -46,6 +46,14 @@ namespace _21_22NBAStats
         {
             uxMainPanel.Controls.Clear();
             HomePanel panel = new HomePanel() { Dock = DockStyle.Fill };
+            uxMainPanel.Controls.Add(panel);
+            panel.Show();
+        }
+
+        private void monthlyStatsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            uxMainPanel.Controls.Clear();
+            PlayerMonthlyStatsPanel panel = new PlayerMonthlyStatsPanel() { Dock = DockStyle.Fill };
             uxMainPanel.Controls.Add(panel);
             panel.Show();
         }
