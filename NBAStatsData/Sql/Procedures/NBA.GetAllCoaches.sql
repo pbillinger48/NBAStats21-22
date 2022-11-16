@@ -1,0 +1,7 @@
+﻿CREATE OR ALTER PROCEDURE NBA.GetAllCoaches
+AS
+
+SELECT C.[Name] AS CoachName, T.[Name] AS TeamName 
+FROM NBA.Coach C
+INNER JOIN NBA.Team T ON T.TeamID = C.TeamID
+GO
