@@ -45,6 +45,7 @@
     <Compile Include="DataDelegates\GetAllTeamsDataDelegate.cs" />
     <Compile Include="DataDelegates\GetAllPlayersDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePlayersGameStatsDataDelegate.cs" />
+    <Compile Include="DataDelegates\InsertGameAndTeamGamesDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveTeamGameResults.cs" />
     <Compile Include="DataDelegates\RetrieveRecordBasedOnMinutesDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePlayerVsOpponentStatsDataDelegate.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="Models\PlayerVsOpponentStats.cs" />
     <Compile Include="Models\RecordBasedOnMinutes.cs" />
     <Compile Include="Models\TeamGameResults.cs" />
+    <Compile Include="SqlInsertDataRepository.cs" />
     <Compile Include="SqlTeamSeasonSummaryRepository.cs" />
     <Compile Include="DataDelegates\GetPlayerDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePlayersSeasonStatsDataDelegate.cs" />
@@ -84,6 +86,8 @@
     <Content Include="Sql\Procedures\NBA.GetAllCoaches.sql" />
     <Content Include="Sql\Procedures\NBA.GetAllTeams.sql" />
     <Content Include="Sql\Procedures\NBA.GetAllPlayers.sql" />
+    <Content Include="Sql\Procedures\NBA.InsertGameStat.sql" />
+    <Content Include="Sql\Procedures\NBA.InsertGameAndTeamGames.sql" />
     <Content Include="Sql\Procedures\NBA.RetrievePlayersGameStats.sql" />
     <Content Include="Sql\Procedures\NBA.RetrievePlayersMonthStats.sql" />
     <Content Include="Sql\Procedures\NBA.RetrievePlayerVSOpponentStats.sql" />
