@@ -22,9 +22,9 @@ namespace _21_22NBAStats
 
         private void uxGetAllCoaches_Click(object sender, EventArgs e)
         {
-            ITeamSeasonSummaryRepository repo;
+            ITeamRepository repo;
 
-            repo = new SqlTeamSeasonSummaryRepository(connectionString);
+            repo = new SqlTeamRepository(connectionString);
             IReadOnlyList<Coach> list = repo.GetAllCoaches();
             DataTable table = new DataTable();
             table.Columns.Add("Coach Name", typeof(string));
@@ -40,9 +40,9 @@ namespace _21_22NBAStats
 
         private void CoachesListPanel_Load(object sender, EventArgs e)
         {
-            ITeamSeasonSummaryRepository repo;
+            ITeamRepository repo;
 
-            repo = new SqlTeamSeasonSummaryRepository(connectionString);
+            repo = new SqlTeamRepository(connectionString);
             IReadOnlyList<Coach> list = repo.GetAllCoaches();
             DataTable table = new DataTable();
             table.Columns.Add("Coach Name", typeof(string));

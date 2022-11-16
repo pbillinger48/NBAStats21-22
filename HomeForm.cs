@@ -97,5 +97,13 @@ namespace _21_22NBAStats
             uxMainPanel.Controls.Add(panel);
             panel.Show();
         }
+
+        private void currentPlayersListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            uxMainPanel.Controls.Clear();
+            TeamsCurrentPlayersPanel panel = new TeamsCurrentPlayersPanel() { Dock = DockStyle.Fill };
+            uxMainPanel.Controls.Add(panel);
+            panel.Show();
+        }
     }
 }

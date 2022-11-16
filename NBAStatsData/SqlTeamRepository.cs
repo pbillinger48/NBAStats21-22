@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace NBAStatsData
 {
-    public class SqlTeamSeasonSummaryRepository: ITeamSeasonSummaryRepository
+    public class SqlTeamRepository: ITeamRepository
     {
         private readonly SqlCommandExecutor executor;
 
-        public SqlTeamSeasonSummaryRepository(string connectionString)
+        public SqlTeamRepository(string connectionString)
         {
             executor = new SqlCommandExecutor(connectionString);
         }
@@ -39,6 +39,11 @@ namespace NBAStatsData
         public IReadOnlyList<Coach> GetAllCoaches()
         {
             return executor.ExecuteReader(new GetAllCoachesDataDelegate());
+        }
+
+        public IReadOnlyList<TeamsCurrentPlayers> RetrieveTeamsCurrentPlayers(string teamName)
+        {
+            return executor.ExecuteReader(new RetrieveTeamsCurrentPlayersDataDelegate(teamName));
         }
     }
 }

@@ -22,7 +22,7 @@ namespace _21_22NBAStats
 
         private void PlayerGameStatsPanel_Load(object sender, EventArgs e)
         {
-            var repo1 = new SqlPlayerSeasonStatsRepository(connectionString);
+            var repo1 = new SqlPlayerRepository(connectionString);
             IReadOnlyList<Player> list1 = repo1.GetAllPlayers();
             var playersList = new List<string>();
             playersList.Add("");
@@ -33,7 +33,7 @@ namespace _21_22NBAStats
             uxPlayerName.DataSource = null;
             uxPlayerName.DataSource = playersList;
 
-            var repo2 = new SqlTeamSeasonSummaryRepository(connectionString);
+            var repo2 = new SqlTeamRepository(connectionString);
             IReadOnlyList<Team> list2 = repo2.GetAllTeams();
             var teamsList = new List<string>();
             teamsList.Add("");
@@ -47,8 +47,8 @@ namespace _21_22NBAStats
 
         private void uxRunPlayerGameStats_Click(object sender, EventArgs e)
         {
-            IPlayerSeasonStatsRepository repo;
-            repo = new SqlPlayerSeasonStatsRepository(connectionString);
+            IPlayerRepository repo;
+            repo = new SqlPlayerRepository(connectionString);
             
             int? PointsMin = 0;
             int? PointsMax = 0;

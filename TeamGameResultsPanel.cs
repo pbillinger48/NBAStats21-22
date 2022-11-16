@@ -22,9 +22,9 @@ namespace _21_22NBAStats
 
         private void uxRunTeamGameResults_Click(object sender, EventArgs e)
         {
-            ITeamSeasonSummaryRepository repo;
+            ITeamRepository repo;
 
-            repo = new SqlTeamSeasonSummaryRepository(connectionString);
+            repo = new SqlTeamRepository(connectionString);
 
             int? teamMin = 0;
             int? teamMax = 0;
@@ -96,7 +96,7 @@ namespace _21_22NBAStats
 
         private void TeamGameResultsPanel_Load(object sender, EventArgs e)
         {
-            var repo2 = new SqlTeamSeasonSummaryRepository(connectionString);
+            var repo2 = new SqlTeamRepository(connectionString);
             IReadOnlyList<Team> list1 = repo2.GetAllTeams();
             IReadOnlyList<Team> list2 = repo2.GetAllTeams();
             var teamsList = new List<string>();

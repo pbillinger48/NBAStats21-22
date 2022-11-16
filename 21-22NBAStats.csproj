@@ -97,6 +97,12 @@
     <Compile Include="TeamGameResultsPanel.Designer.cs">
       <DependentUpon>TeamGameResultsPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="TeamsCurrentPlayersPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeamsCurrentPlayersPanel.Designer.cs">
+      <DependentUpon>TeamsCurrentPlayersPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="TeamSeasonSummaryPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TeamGameResultsPanel.resx">
       <DependentUpon>TeamGameResultsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamsCurrentPlayersPanel.resx">
+      <DependentUpon>TeamsCurrentPlayersPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeamSeasonSummaryPanel.resx">
       <DependentUpon>TeamSeasonSummaryPanel.cs</DependentUpon>
