@@ -59,5 +59,11 @@ namespace NBAStatsData
         /// </summary>
         /// <returns>All players in the database</returns>
         IReadOnlyList<Player> GetAllPlayers();
+
+        /// <summary>
+        /// Gets a players stats for a month
+        /// </summary>
+        /// <returns>PlayerMonthStats object that represents a players stats for a month</returns>
+        IReadOnlyList<PlayerMonthStats> RetrievePlayersMonthStats(int month, string playerName);
     }
 }

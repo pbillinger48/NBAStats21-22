@@ -58,6 +58,11 @@ namespace NBAStatsData
                 APGMax, APGMin, BPGMax, BPGMin, SPGMax, SPGMin, TPGMax, TPGMin, MPGMax, MPGMin));
         }
 
+        public IReadOnlyList<PlayerMonthStats> RetrievePlayersMonthStats(int month, string playerName)
+        {
+            return executor.ExecuteReader(new RetrievePlayersMonthStatsDataDelegate(month, playerName));
+        }
+
         public IReadOnlyList<Player> GetAllPlayers()
         {
             return executor.ExecuteReader(new GetAllPlayersDataDelegate());

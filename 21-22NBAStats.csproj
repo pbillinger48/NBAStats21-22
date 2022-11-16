@@ -67,11 +67,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RecordBasedOnMinutesPanel.cs">
+    <Compile Include="OtherPlayerQueriesPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="RecordBasedOnMinutesPanel.Designer.cs">
-      <DependentUpon>RecordBasedOnMinutesPanel.cs</DependentUpon>
+    <Compile Include="OtherPlayerQueriesPanel.Designer.cs">
+      <DependentUpon>OtherPlayerQueriesPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="TeamSeasonSummaryPanel.cs">
       <SubType>UserControl</SubType>
@@ -103,8 +103,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RecordBasedOnMinutesPanel.resx">
-      <DependentUpon>RecordBasedOnMinutesPanel.cs</DependentUpon>
+    <EmbeddedResource Include="OtherPlayerQueriesPanel.resx">
+      <DependentUpon>OtherPlayerQueriesPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeamSeasonSummaryPanel.resx">
       <DependentUpon>TeamSeasonSummaryPanel.cs</DependentUpon>
