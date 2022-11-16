@@ -57,7 +57,7 @@ SELECT CTE3.TeamID,
 FROM CTE3 INNER JOIN NBA.Team T ON CTE3.TeamID = T.TeamID
 GROUP BY CTE3.TeamID, T.[Name]
 )
-SELECT CTE2.PlayerName, CTE2.[Name], CTE2.WinsWhenThresholdMet, CTE2.LossesWhenThresholdMet, (CTE4.Wins - CTE2.WinsWhenThresholdMet) AS WinsWhenThresholdNotMet, (CTE4.Losses - CTE2.LossesWhenThresholdMet) AS LossesWhenThresholdNotMet
+SELECT CTE2.PlayerName, CTE2.[Name] as TeamName, CTE2.WinsWhenThresholdMet, CTE2.LossesWhenThresholdMet, (CTE4.Wins - CTE2.WinsWhenThresholdMet) AS WinsWhenThresholdNotMet, (CTE4.Losses - CTE2.LossesWhenThresholdMet) AS LossesWhenThresholdNotMet
 FROM CTE2
 INNER JOIN CTE4 ON CTE4.[Name] = CTE2.[Name]
 

@@ -65,5 +65,21 @@ namespace NBAStatsData
         /// </summary>
         /// <returns>PlayerMonthStats object that represents a players stats for a month</returns>
         IReadOnlyList<PlayerMonthStats> RetrievePlayersMonthStats(int month, string playerName);
+
+        /// <summary>
+        /// Gets a players statistical averages versus a certain team
+        /// </summary>
+        /// <param name="playerName">Desired player for the query</param>
+        /// <param name="opponentName">Desired opponent for the query</param>
+        /// <returns></returns>
+        PlayerVsOpponentStats RetrievePlayerVsOpponentStats(string playerName, string opponentName);
+
+        /// <summary>
+        /// Gets a teams wins and losses based off a players minutes played
+        /// </summary>
+        /// <param name="playerName">Desired player for query</param>
+        /// <param name="minutesThreshold">Desired minutes of played</param>
+        /// <returns></returns>
+        RecordBasedOnMinutes RetrieveRecordBasedOnMinutes(string playerName, decimal minutesThreshold);
     }
 }

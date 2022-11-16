@@ -67,5 +67,15 @@ namespace NBAStatsData
         {
             return executor.ExecuteReader(new GetAllPlayersDataDelegate());
         }
+
+        public PlayerVsOpponentStats RetrievePlayerVsOpponentStats(string playerName, string opponentName)
+        {
+            return executor.ExecuteReader(new RetrievePlayerVsOpponentStatsDataDelegate(playerName, opponentName));
+        }
+
+        public RecordBasedOnMinutes RetrieveRecordBasedOnMinutes(string playerName, decimal minutesThreshold)
+        {
+            return executor.ExecuteReader(new RetrieveRecordBasedOnMinutesDataDelegate(playerName, minutesThreshold));
+        }
     }
 }
