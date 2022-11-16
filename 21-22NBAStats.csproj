@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoachesListPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CoachesListPanel.Designer.cs">
+      <DependentUpon>CoachesListPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomePanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -73,6 +79,12 @@
     <Compile Include="OtherPlayerQueriesPanel.Designer.cs">
       <DependentUpon>OtherPlayerQueriesPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="TeamGameResultsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeamGameResultsPanel.Designer.cs">
+      <DependentUpon>TeamGameResultsPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="TeamSeasonSummaryPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -85,6 +97,9 @@
     <Compile Include="HomeForm.Designer.cs">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CoachesListPanel.resx">
+      <DependentUpon>CoachesListPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomePanel.resx">
       <DependentUpon>HomePanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,6 +120,9 @@
     </Compile>
     <EmbeddedResource Include="OtherPlayerQueriesPanel.resx">
       <DependentUpon>OtherPlayerQueriesPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamGameResultsPanel.resx">
+      <DependentUpon>TeamGameResultsPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeamSeasonSummaryPanel.resx">
       <DependentUpon>TeamSeasonSummaryPanel.cs</DependentUpon>

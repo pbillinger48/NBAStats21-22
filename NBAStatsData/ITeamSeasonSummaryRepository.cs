@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NBAStatsData
 {
-    interface ITeamSeasonSummaryRepository
+    public interface ITeamSeasonSummaryRepository
     {
         /// <summary>
         /// Retrieves all teams in the database.
@@ -23,5 +23,25 @@ namespace NBAStatsData
         /// </summary>
         /// <returns>Gets all teams</returns>
         IReadOnlyList<Team> GetAllTeams();
+
+        /// <summary>
+        /// Gets all the games for a specified team
+        /// </summary>
+        /// <param name="teamName">Name of the team</param>
+        /// <param name="opponentName">Name of the opponent</param>
+        /// <param name="gameResult">Win or loss result</param>
+        /// <param name="pointsMin">Min points scored by the team</param>
+        /// <param name="pointsMax">Max points scored by the team</param>
+        /// <param name="oppPointsMin">Min points scored by the opponent</param>
+        /// <param name="oppPointsMax">Max points scored by the opponent</param>
+        /// <returns></returns>
+        IReadOnlyList<TeamGameResults> RetrieveTeamGameResults(string teamName, string opponentName, string gameResult,
+            int? pointsMin, int? pointsMax, int? oppPointsMin, int? oppPointsMax);
+
+        /// <summary>
+        /// Gets all the coaches and their teams
+        /// </summary>
+        /// <returns>All of the coaches and their teams</returns>
+        IReadOnlyList<Coach> GetAllCoaches();
     }
 }

@@ -32,9 +32,9 @@ namespace _21_22NBAStats
             }
             uxPlayerName1.DataSource = null;
             uxPlayerName1.DataSource = playersList;
-
+            var playersList2 = new List<string>(playersList);
             uxPlayerName2.DataSource = null;
-            uxPlayerName2.DataSource = playersList;
+            uxPlayerName2.DataSource = playersList2;
 
             var repo2 = new SqlTeamSeasonSummaryRepository(connectionString);
             IReadOnlyList<Team> list2 = repo2.GetAllTeams();

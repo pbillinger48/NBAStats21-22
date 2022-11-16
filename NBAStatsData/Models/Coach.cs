@@ -8,14 +8,12 @@ namespace NBAStatsData.Models
 {
     public class Coach
     {
-        public int CoachID { get; }
-        public int TeamID { get; }
+        public string TeamName { get; }
         public string Name { get; }
 
-        public Coach(int coachID, int teamID, string name)
+        public Coach(string teamName, string name)
         {
-            CoachID = coachID;
-            TeamID = teamID;
+            TeamName = teamName;
             Name = name;
         }
     }

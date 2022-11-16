@@ -41,3 +41,4 @@ FROM
 	) Derived
 	INNER JOIN NBA.TempData T ON T.PlayerName = Derived.PlayerName
 		AND T.GameDate = Derived.MaxDate
+	ORDER BY T.PlayerName ASC;

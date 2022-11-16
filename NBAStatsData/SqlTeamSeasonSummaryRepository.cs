@@ -28,5 +28,17 @@ namespace NBAStatsData
         {
             return executor.ExecuteReader(new GetAllTeamsDataDelegate());
         }
+
+        public IReadOnlyList<TeamGameResults> RetrieveTeamGameResults(string teamName, string opponentName, string gameResult,
+            int? pointsMin, int? pointsMax, int? oppPointsMin, int? oppPointsMax)
+        {
+            return executor.ExecuteReader(new RetrieveTeamGameResultsDataDelegate(teamName, opponentName, gameResult, pointsMin, pointsMax,
+                oppPointsMin, oppPointsMax));
+        }
+
+        public IReadOnlyList<Coach> GetAllCoaches()
+        {
+            return executor.ExecuteReader(new GetAllCoachesDataDelegate());
+        }
     }
 }

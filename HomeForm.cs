@@ -65,5 +65,26 @@ namespace _21_22NBAStats
             uxMainPanel.Controls.Add(panel);
             panel.Show();
         }
+
+        private void gamesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            uxMainPanel.Controls.Clear();
+            TeamGameResultsPanel panel = new TeamGameResultsPanel() { Dock = DockStyle.Fill };
+            uxMainPanel.Controls.Add(panel);
+            panel.Show();
+        }
+
+        private void coachesListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            uxMainPanel.Controls.Clear();
+            CoachesListPanel panel = new CoachesListPanel() { Dock = DockStyle.Fill };
+            uxMainPanel.Controls.Add(panel);
+            panel.Show();
+        }
+
+        private void gameStatLinesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

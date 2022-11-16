@@ -35,7 +35,7 @@ INNER JOIN NBA.Team T ON T.TeamID = TG.TeamID
 WHERE T.[Name] LIKE @TeamName
 )
 
-SELECT CTE.[Date], CTE.[Name], CTE.Score, CTE.OppScore, CTE.OppName, CTE.OppScore, 
+SELECT CTE.[Date], CTE.[Name] as Team, CTE.Score as TeamScore, CTE.OppScore as OpponentScore, CTE.OppName as Opponent, 
 IIF(CTE.Score > CTE.OppScore, 'Win', 'Loss') AS RESULT,
 T.[Location]
 FROM CTE

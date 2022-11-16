@@ -33,13 +33,16 @@ namespace _21_22NBAStats
             this.playersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playerStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monthlyStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.teamsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.seasonSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.coachesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.testPanelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uxMainPanel = new System.Windows.Forms.Panel();
             this.otherPlayerQueriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addPlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.teamsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seasonSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gamesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.coachesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.coachesListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testPanelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uxMainPanel = new System.Windows.Forms.Panel();
+            this.gameStatLinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uxMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,8 +58,8 @@ namespace _21_22NBAStats
             this.uxMenuStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.uxMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.uxMenuStrip.Name = "uxMenuStrip";
-            this.uxMenuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.uxMenuStrip.Size = new System.Drawing.Size(944, 24);
+            this.uxMenuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.uxMenuStrip.Size = new System.Drawing.Size(1259, 28);
             this.uxMenuStrip.TabIndex = 0;
             this.uxMenuStrip.Text = "menuStrip1";
             // 
@@ -65,84 +68,109 @@ namespace _21_22NBAStats
             this.playersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.playerStatsToolStripMenuItem,
             this.monthlyStatsToolStripMenuItem,
+            this.gameStatLinesToolStripMenuItem,
             this.otherPlayerQueriesToolStripMenuItem,
             this.addPlayerToolStripMenuItem});
             this.playersToolStripMenuItem.Name = "playersToolStripMenuItem";
-            this.playersToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.playersToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
             this.playersToolStripMenuItem.Text = "Players";
             // 
             // playerStatsToolStripMenuItem
             // 
             this.playerStatsToolStripMenuItem.Name = "playerStatsToolStripMenuItem";
-            this.playerStatsToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.playerStatsToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
             this.playerStatsToolStripMenuItem.Text = "Season Stats";
             this.playerStatsToolStripMenuItem.Click += new System.EventHandler(this.PlayerSeasonStatsToolStripMenuItem_Click);
             // 
             // monthlyStatsToolStripMenuItem
             // 
             this.monthlyStatsToolStripMenuItem.Name = "monthlyStatsToolStripMenuItem";
-            this.monthlyStatsToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.monthlyStatsToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
             this.monthlyStatsToolStripMenuItem.Text = "Monthly Stats";
             this.monthlyStatsToolStripMenuItem.Click += new System.EventHandler(this.monthlyStatsToolStripMenuItem_Click);
-            // 
-            // teamsToolStripMenuItem
-            // 
-            this.teamsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.seasonSummaryToolStripMenuItem});
-            this.teamsToolStripMenuItem.Name = "teamsToolStripMenuItem";
-            this.teamsToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.teamsToolStripMenuItem.Text = "Teams";
-            // 
-            // seasonSummaryToolStripMenuItem
-            // 
-            this.seasonSummaryToolStripMenuItem.Name = "seasonSummaryToolStripMenuItem";
-            this.seasonSummaryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.seasonSummaryToolStripMenuItem.Text = "Season Summary";
-            this.seasonSummaryToolStripMenuItem.Click += new System.EventHandler(this.seasonSummaryToolStripMenuItem_Click);
-            // 
-            // coachesToolStripMenuItem
-            // 
-            this.coachesToolStripMenuItem.Name = "coachesToolStripMenuItem";
-            this.coachesToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.coachesToolStripMenuItem.Text = "Coaches";
-            // 
-            // testPanelsToolStripMenuItem
-            // 
-            this.testPanelsToolStripMenuItem.Name = "testPanelsToolStripMenuItem";
-            this.testPanelsToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.testPanelsToolStripMenuItem.Text = "Home";
-            this.testPanelsToolStripMenuItem.Click += new System.EventHandler(this.testPanelsToolStripMenuItem_Click);
-            // 
-            // uxMainPanel
-            // 
-            this.uxMainPanel.Location = new System.Drawing.Point(4, 25);
-            this.uxMainPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.uxMainPanel.Name = "uxMainPanel";
-            this.uxMainPanel.Size = new System.Drawing.Size(934, 416);
-            this.uxMainPanel.TabIndex = 2;
             // 
             // otherPlayerQueriesToolStripMenuItem
             // 
             this.otherPlayerQueriesToolStripMenuItem.Name = "otherPlayerQueriesToolStripMenuItem";
-            this.otherPlayerQueriesToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.otherPlayerQueriesToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
             this.otherPlayerQueriesToolStripMenuItem.Text = "Other Player Queries";
             this.otherPlayerQueriesToolStripMenuItem.Click += new System.EventHandler(this.otherPlayerQueriesToolStripMenuItem_Click);
             // 
             // addPlayerToolStripMenuItem
             // 
             this.addPlayerToolStripMenuItem.Name = "addPlayerToolStripMenuItem";
-            this.addPlayerToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.addPlayerToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
             this.addPlayerToolStripMenuItem.Text = "Add Player";
+            // 
+            // teamsToolStripMenuItem
+            // 
+            this.teamsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.seasonSummaryToolStripMenuItem,
+            this.gamesToolStripMenuItem});
+            this.teamsToolStripMenuItem.Name = "teamsToolStripMenuItem";
+            this.teamsToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
+            this.teamsToolStripMenuItem.Text = "Teams";
+            // 
+            // seasonSummaryToolStripMenuItem
+            // 
+            this.seasonSummaryToolStripMenuItem.Name = "seasonSummaryToolStripMenuItem";
+            this.seasonSummaryToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.seasonSummaryToolStripMenuItem.Text = "Season Summary";
+            this.seasonSummaryToolStripMenuItem.Click += new System.EventHandler(this.seasonSummaryToolStripMenuItem_Click);
+            // 
+            // gamesToolStripMenuItem
+            // 
+            this.gamesToolStripMenuItem.Name = "gamesToolStripMenuItem";
+            this.gamesToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.gamesToolStripMenuItem.Text = "Games";
+            this.gamesToolStripMenuItem.Click += new System.EventHandler(this.gamesToolStripMenuItem_Click);
+            // 
+            // coachesToolStripMenuItem
+            // 
+            this.coachesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.coachesListToolStripMenuItem});
+            this.coachesToolStripMenuItem.Name = "coachesToolStripMenuItem";
+            this.coachesToolStripMenuItem.Size = new System.Drawing.Size(78, 24);
+            this.coachesToolStripMenuItem.Text = "Coaches";
+            // 
+            // coachesListToolStripMenuItem
+            // 
+            this.coachesListToolStripMenuItem.Name = "coachesListToolStripMenuItem";
+            this.coachesListToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.coachesListToolStripMenuItem.Text = "Coaches List";
+            this.coachesListToolStripMenuItem.Click += new System.EventHandler(this.coachesListToolStripMenuItem_Click);
+            // 
+            // testPanelsToolStripMenuItem
+            // 
+            this.testPanelsToolStripMenuItem.Name = "testPanelsToolStripMenuItem";
+            this.testPanelsToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
+            this.testPanelsToolStripMenuItem.Text = "Home";
+            this.testPanelsToolStripMenuItem.Click += new System.EventHandler(this.testPanelsToolStripMenuItem_Click);
+            // 
+            // uxMainPanel
+            // 
+            this.uxMainPanel.Location = new System.Drawing.Point(5, 31);
+            this.uxMainPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.uxMainPanel.Name = "uxMainPanel";
+            this.uxMainPanel.Size = new System.Drawing.Size(1245, 512);
+            this.uxMainPanel.TabIndex = 2;
+            // 
+            // gameStatLinesToolStripMenuItem
+            // 
+            this.gameStatLinesToolStripMenuItem.Name = "gameStatLinesToolStripMenuItem";
+            this.gameStatLinesToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
+            this.gameStatLinesToolStripMenuItem.Text = "Game Stat Lines";
+            this.gameStatLinesToolStripMenuItem.Click += new System.EventHandler(this.gameStatLinesToolStripMenuItem_Click);
             // 
             // HomeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 444);
+            this.ClientSize = new System.Drawing.Size(1259, 546);
             this.Controls.Add(this.uxMainPanel);
             this.Controls.Add(this.uxMenuStrip);
             this.MainMenuStrip = this.uxMenuStrip;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "HomeForm";
             this.Text = "21-22NBAStats";
             this.Load += new System.EventHandler(this.HomeForm_Load);
@@ -166,5 +194,8 @@ namespace _21_22NBAStats
         private System.Windows.Forms.ToolStripMenuItem monthlyStatsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem otherPlayerQueriesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addPlayerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gamesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem coachesListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gameStatLinesToolStripMenuItem;
     }
 }
