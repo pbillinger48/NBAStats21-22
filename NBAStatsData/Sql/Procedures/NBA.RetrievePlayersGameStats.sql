@@ -9,7 +9,7 @@ AS
 WITH CTE AS
 (
 SELECT P.[Name]AS PlayerName, T.[Name] AS TeamName, 
-GS.Points, GS.Rebounds, GS.Assists, GS.Blocks, GS.Steals, GS.Turnovers, GS.[Minutes],
+GS.Points, GS.Rebounds, GS.Assists, GS.Blocks, GS.Steals, GS.Turnovers, CAST(GS.[Minutes] as int) as Minutes,
 (
 		SELECT T1.[Name]
 		FROM NBA.Game G1 
@@ -31,10 +31,5 @@ FROM CTE
 WHERE CTE.PlayerName LIKE @PlayerName 
 AND CTE.OppName LIKE @OppName
 AND CTE.Points BETWEEN @PointsMin AND @PointsMax
-AND CTE.Rebounds BETWEEN @ReboundsMin AND @ReboundsMax
-AND CTE.Assists BETWEEN @AssistsMin AND @AssistsMax
-AND CTE.Blocks BETWEEN @BlocksMin AND @BlocksMax
-AND CTE.Steals BETWEEN @StealsMin AND @StealsMax
-AND CTE.Turnovers BETWEEN @TurnoversMin AND @TurnoversMax
 AND CTE.[Minutes] BETWEEN @MinutesMin AND @MinutesMax
 ORDER BY CTE.[Date], CTE.Points DESC

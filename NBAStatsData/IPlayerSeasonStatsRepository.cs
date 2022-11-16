@@ -81,5 +81,18 @@ namespace NBAStatsData
         /// <param name="minutesThreshold">Desired minutes of played</param>
         /// <returns></returns>
         RecordBasedOnMinutes RetrieveRecordBasedOnMinutes(string playerName, decimal minutesThreshold);
+
+        /// <summary>
+        /// Retrieves all the game by game stats for a given player
+        /// </summary>
+        /// <param name="playerName">Desired player</param>
+        /// <param name="pointsMin">Min points scored</param>
+        /// <param name="pointsMax">Max points scored</param>
+        /// <param name="minutesMin">Min minutes played</param>
+        /// <param name="minutesMax">Max minutes played</param>
+        /// <param name="oppName">Desired opponent</param>
+        /// <returns></returns>
+        IReadOnlyList<PlayerGameStats> RetrievePlayersGameStats(string playerName, int? pointsMin, int? pointsMax, int? minutesMin,
+            int? minutesMax, string oppName);
     }
 }
