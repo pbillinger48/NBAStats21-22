@@ -84,7 +84,18 @@ namespace _21_22NBAStats
 
         private void gameStatLinesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            uxMainPanel.Controls.Clear();
+            PlayerGameStatsPanel panel = new PlayerGameStatsPanel() { Dock = DockStyle.Fill };
+            uxMainPanel.Controls.Add(panel);
+            panel.Show();
+        }
 
+        private void addGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            uxMainPanel.Controls.Clear();
+            AddGamePanel panel = new AddGamePanel() { Dock = DockStyle.Fill };
+            uxMainPanel.Controls.Add(panel);
+            panel.Show();
         }
     }
 }

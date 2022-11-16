@@ -33,6 +33,7 @@ namespace _21_22NBAStats
             this.playersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playerStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monthlyStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gameStatLinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.otherPlayerQueriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addPlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teamsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,7 +43,8 @@ namespace _21_22NBAStats
             this.coachesListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testPanelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uxMainPanel = new System.Windows.Forms.Panel();
-            this.gameStatLinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataModificationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uxMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +56,7 @@ namespace _21_22NBAStats
             this.playersToolStripMenuItem,
             this.teamsToolStripMenuItem,
             this.coachesToolStripMenuItem,
+            this.dataModificationToolStripMenuItem,
             this.testPanelsToolStripMenuItem});
             this.uxMenuStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.uxMenuStrip.Location = new System.Drawing.Point(0, 0);
@@ -89,6 +92,13 @@ namespace _21_22NBAStats
             this.monthlyStatsToolStripMenuItem.Text = "Monthly Stats";
             this.monthlyStatsToolStripMenuItem.Click += new System.EventHandler(this.monthlyStatsToolStripMenuItem_Click);
             // 
+            // gameStatLinesToolStripMenuItem
+            // 
+            this.gameStatLinesToolStripMenuItem.Name = "gameStatLinesToolStripMenuItem";
+            this.gameStatLinesToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
+            this.gameStatLinesToolStripMenuItem.Text = "Game Stat Lines";
+            this.gameStatLinesToolStripMenuItem.Click += new System.EventHandler(this.gameStatLinesToolStripMenuItem_Click);
+            // 
             // otherPlayerQueriesToolStripMenuItem
             // 
             this.otherPlayerQueriesToolStripMenuItem.Name = "otherPlayerQueriesToolStripMenuItem";
@@ -114,15 +124,15 @@ namespace _21_22NBAStats
             // seasonSummaryToolStripMenuItem
             // 
             this.seasonSummaryToolStripMenuItem.Name = "seasonSummaryToolStripMenuItem";
-            this.seasonSummaryToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.seasonSummaryToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.seasonSummaryToolStripMenuItem.Text = "Season Summary";
             this.seasonSummaryToolStripMenuItem.Click += new System.EventHandler(this.seasonSummaryToolStripMenuItem_Click);
             // 
             // gamesToolStripMenuItem
             // 
             this.gamesToolStripMenuItem.Name = "gamesToolStripMenuItem";
-            this.gamesToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
-            this.gamesToolStripMenuItem.Text = "Games";
+            this.gamesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.gamesToolStripMenuItem.Text = "Game Results";
             this.gamesToolStripMenuItem.Click += new System.EventHandler(this.gamesToolStripMenuItem_Click);
             // 
             // coachesToolStripMenuItem
@@ -136,7 +146,7 @@ namespace _21_22NBAStats
             // coachesListToolStripMenuItem
             // 
             this.coachesListToolStripMenuItem.Name = "coachesListToolStripMenuItem";
-            this.coachesListToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.coachesListToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.coachesListToolStripMenuItem.Text = "Coaches List";
             this.coachesListToolStripMenuItem.Click += new System.EventHandler(this.coachesListToolStripMenuItem_Click);
             // 
@@ -155,12 +165,20 @@ namespace _21_22NBAStats
             this.uxMainPanel.Size = new System.Drawing.Size(1245, 512);
             this.uxMainPanel.TabIndex = 2;
             // 
-            // gameStatLinesToolStripMenuItem
+            // dataModificationToolStripMenuItem
             // 
-            this.gameStatLinesToolStripMenuItem.Name = "gameStatLinesToolStripMenuItem";
-            this.gameStatLinesToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
-            this.gameStatLinesToolStripMenuItem.Text = "Game Stat Lines";
-            this.gameStatLinesToolStripMenuItem.Click += new System.EventHandler(this.gameStatLinesToolStripMenuItem_Click);
+            this.dataModificationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addGameToolStripMenuItem});
+            this.dataModificationToolStripMenuItem.Name = "dataModificationToolStripMenuItem";
+            this.dataModificationToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
+            this.dataModificationToolStripMenuItem.Text = "Data Modification";
+            // 
+            // addGameToolStripMenuItem
+            // 
+            this.addGameToolStripMenuItem.Name = "addGameToolStripMenuItem";
+            this.addGameToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.addGameToolStripMenuItem.Text = "Add Game";
+            this.addGameToolStripMenuItem.Click += new System.EventHandler(this.addGameToolStripMenuItem_Click);
             // 
             // HomeForm
             // 
@@ -197,5 +215,7 @@ namespace _21_22NBAStats
         private System.Windows.Forms.ToolStripMenuItem gamesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem coachesListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gameStatLinesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dataModificationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addGameToolStripMenuItem;
     }
 }

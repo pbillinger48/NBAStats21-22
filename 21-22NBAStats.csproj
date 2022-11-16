@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddGamePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddGamePanel.Designer.cs">
+      <DependentUpon>AddGamePanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="CoachesListPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -58,6 +64,12 @@
     </Compile>
     <Compile Include="HomePanel.Designer.cs">
       <DependentUpon>HomePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerGameStatsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PlayerGameStatsPanel.Designer.cs">
+      <DependentUpon>PlayerGameStatsPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="PlayerSeasonStatsPanel.cs">
       <SubType>UserControl</SubType>
@@ -97,11 +109,17 @@
     <Compile Include="HomeForm.Designer.cs">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddGamePanel.resx">
+      <DependentUpon>AddGamePanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CoachesListPanel.resx">
       <DependentUpon>CoachesListPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePanel.resx">
       <DependentUpon>HomePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerGameStatsPanel.resx">
+      <DependentUpon>PlayerGameStatsPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlayerSeasonStatsPanel.resx">
       <DependentUpon>PlayerSeasonStatsPanel.cs</DependentUpon>
