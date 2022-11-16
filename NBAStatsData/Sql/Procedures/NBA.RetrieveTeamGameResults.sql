@@ -1,5 +1,11 @@
 ﻿CREATE OR ALTER PROCEDURE NBA.RetrieveTeamGameResults
-	@TeamName NVARCHAR(128) = '%'	
+	@TeamName NVARCHAR(128) = '%',
+	@OpponentName NVARCHAR(128) = '%',
+	@GameResult NVARCHAR(128) = '%',
+	@PointsMin INT = 0,
+	@PointsMax INT = 200,
+	@OppPointsMin INT = 0,
+	@OppPointsMax INT = 200
 AS
 WITH CTE AS (
 SELECT G.[Date], T.[Name], TG.Score,
@@ -34,5 +40,8 @@ IIF(CTE.Score > CTE.OppScore, 'Win', 'Loss') AS RESULT,
 T.[Location]
 FROM CTE
 INNER JOIN NBA.Team T ON T.TeamID = CTE.HomeTeamID
+WHERE CTE.OppName Like @OpponentName 
+AND IIF(CTE.Score > CTE.OppScore, 'Win', 'Loss') LIKE @GameResult
+AND CTE.Score BETWEEN @PointsMin AND @PointsMax
+AND CTE.OppScore BETWEEN @OppPointsMin AND @OppPointsMax
 ORDER BY CTE.[Date] ASC
-
