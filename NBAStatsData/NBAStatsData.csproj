@@ -44,11 +44,13 @@
     <Compile Include="DataDelegates\GetAllCoachesDataDelegate.cs" />
     <Compile Include="DataDelegates\GetAllTeamsDataDelegate.cs" />
     <Compile Include="DataDelegates\GetAllPlayersDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrievePlayersGameStatsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveTeamGameResults.cs" />
     <Compile Include="DataDelegates\RetrieveRecordBasedOnMinutesDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePlayerVsOpponentStatsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePlayersMonthStatsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveTeamSeasonSummariesDataDelegate.cs" />
+    <Compile Include="Models\PlayerGameStats.cs" />
     <Compile Include="Models\PlayerMonthStats.cs" />
     <Compile Include="Models\PlayerVsOpponentStats.cs" />
     <Compile Include="Models\RecordBasedOnMinutes.cs" />

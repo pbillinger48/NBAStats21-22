@@ -77,5 +77,12 @@ namespace NBAStatsData
         {
             return executor.ExecuteReader(new RetrieveRecordBasedOnMinutesDataDelegate(playerName, minutesThreshold));
         }
+
+        public IReadOnlyList<PlayerGameStats> RetrievePlayersGameStats(string playerName, int? pointsMin, int? pointsMax, int? minutesMin,
+            int? minutesMax, string oppName)
+        {
+            return executor.ExecuteReader(new RetrievePlayersGameStatsDataDelegate(playerName, pointsMin, pointsMax, minutesMin,
+                minutesMax, oppName));
+        }
     }
 }
