@@ -16,6 +16,9 @@ namespace _21_22NBAStats
     {
         const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=NBAStatsDB;Integrated Security=SSPI;";
 
+        DataTable homePlayerTable;
+        DataTable awayPlayerTable;
+
 
         public AddGamePanel()
         {
@@ -24,10 +27,43 @@ namespace _21_22NBAStats
 
         private void uxInsertButton_Click(object sender, EventArgs e)
         {
-            var repo = new SqlInsertDataRepository(connectionString);
+            try
+            {
+                var repo = new SqlInsertDataRepository(connectionString);
 
-            repo.InsertGameAndTeamGames(new DateTime((int)uxYearBox.Value, (int)uxMonthBox.Value, (int)uxDayBox.Value),
-                (string)uxHomeTeamComboBox.SelectedValue, (string)uxAwayTeamComboBox.SelectedValue, 0, 1);
+                var date = new DateTime((int)uxYearBox.Value, (int)uxMonthBox.Value, (int)uxDayBox.Value);
+
+                string homeTeam = (string)uxHomeTeamComboBox.SelectedValue;
+
+                string awayTeam = (string)uxAwayTeamComboBox.SelectedValue;
+
+                int homePoints = GetHomePoints();
+
+                int awayPoints = GetAwayPoints();
+
+                repo.InsertGameAndTeamGames(date, homeTeam, awayTeam, homePoints, awayPoints);
+
+                foreach (DataRow row in homePlayerTable.Rows)
+                {
+                    repo.InsertGameStat(date, homeTeam, awayTeam, (string)row["PlayerName"], homeTeam, (int)row["Points"],
+                        (int)row["Rebounds"], (int)row["Assists"], (int)row["Blocks"], (int)row["Steals"],
+                        (int)row["Turnovers"], (decimal)row["Minutes"]);
+                }
+
+                foreach (DataRow row in awayPlayerTable.Rows)
+                {
+                    repo.InsertGameStat(date, homeTeam, awayTeam, (string)row["PlayerName"], awayTeam, (int)row["Points"],
+                        (int)row["Rebounds"], (int)row["Assists"], (int)row["Blocks"], (int)row["Steals"],
+                        (int)row["Turnovers"], (decimal)row["Minutes"]);
+                }
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Error Inserting the game stats");
+            }
+            
+
+
         }
 
         private void AddGamePanel_Load(object sender, EventArgs e)
@@ -47,6 +83,75 @@ namespace _21_22NBAStats
 
             uxAwayTeamComboBox.DataSource = null;
             uxAwayTeamComboBox.DataSource = teamsList2;
+
+            homePlayerTable = new DataTable();
+            homePlayerTable.Columns.Add("PlayerName", typeof(string));
+            homePlayerTable.Columns.Add("Points", typeof(int));
+            homePlayerTable.Columns.Add("Rebounds", typeof(int));
+            homePlayerTable.Columns.Add("Assists", typeof(int));
+            homePlayerTable.Columns.Add("Blocks", typeof(int));
+            homePlayerTable.Columns.Add("Steals", typeof(int));
+            homePlayerTable.Columns.Add("Turnovers", typeof(int));
+            homePlayerTable.Columns.Add("Minutes", typeof(decimal));
+
+            uxHomeTeamPlayerGrid.DataSource = null;
+            uxHomeTeamPlayerGrid.DataSource = homePlayerTable;
+
+            awayPlayerTable = new DataTable();
+            awayPlayerTable.Columns.Add("PlayerName", typeof(string));
+            awayPlayerTable.Columns.Add("Points", typeof(int));
+            awayPlayerTable.Columns.Add("Rebounds", typeof(int));
+            awayPlayerTable.Columns.Add("Assists", typeof(int));
+            awayPlayerTable.Columns.Add("Blocks", typeof(int));
+            awayPlayerTable.Columns.Add("Steals", typeof(int));
+            awayPlayerTable.Columns.Add("Turnovers", typeof(int));
+            awayPlayerTable.Columns.Add("Minutes", typeof(decimal));
+
+            uxAwayTeamPlayerGrid.DataSource = null;
+            uxAwayTeamPlayerGrid.DataSource = awayPlayerTable;
+        }
+
+        private void uxHomeTeamPlayerGrid_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            UpdateScores();
+        }
+
+        private void UpdateScores()
+        {
+            int homeScore = GetHomePoints();
+            
+            uxHomeScoreBox.Text = null;
+            uxHomeScoreBox.Text = homeScore.ToString();
+
+            int awayScore = GetAwayPoints();
+            
+            uxAwayScoreBox.Text = null;
+            uxAwayScoreBox.Text = awayScore.ToString();
+        }
+
+        private int GetHomePoints()
+        {
+            int score = 0;
+            foreach (DataRow row in homePlayerTable.Rows)
+            {
+                score += (int)row["Points"];
+            }
+            return score;
+        }
+
+        private int GetAwayPoints()
+        {
+            int score = 0;
+            foreach (DataRow row in awayPlayerTable.Rows)
+            {
+                score += (int)row["Points"];
+            }
+            return score;
+        }
+
+        private void uxAwayTeamPlayerGrid_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            UpdateScores();
         }
     }
 }

@@ -21,5 +21,12 @@ namespace NBAStatsData
         {
             return executor.ExecuteNonQuery(new InsertGameAndTeamGamesDataDelegate(date, homeTeam, awayTeam, homeScore, awayScore));
         }
+
+        public bool InsertGameStat(DateTime date, string homeTeam, string awayTeam, string playerName, string playerTeam,
+            int points, int rebounds, int assists, int blocks, int steals, int turnovers, decimal minutes)
+        {
+            return executor.ExecuteNonQuery(new InsertGameStatDataDelegate(date, homeTeam, awayTeam, playerName, playerTeam
+                , points, rebounds, assists, blocks, steals, turnovers, minutes));
+        }
     }
 }

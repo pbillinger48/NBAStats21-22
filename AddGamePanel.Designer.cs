@@ -55,8 +55,6 @@ namespace _21_22NBAStats
             // 
             // uxHomeTeamPlayerGrid
             // 
-            this.uxHomeTeamPlayerGrid.AllowUserToAddRows = false;
-            this.uxHomeTeamPlayerGrid.AllowUserToDeleteRows = false;
             this.uxHomeTeamPlayerGrid.AllowUserToResizeColumns = false;
             this.uxHomeTeamPlayerGrid.AllowUserToResizeRows = false;
             this.uxHomeTeamPlayerGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
@@ -70,11 +68,10 @@ namespace _21_22NBAStats
             this.uxHomeTeamPlayerGrid.RowTemplate.Height = 24;
             this.uxHomeTeamPlayerGrid.Size = new System.Drawing.Size(930, 110);
             this.uxHomeTeamPlayerGrid.TabIndex = 2;
+            this.uxHomeTeamPlayerGrid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.uxHomeTeamPlayerGrid_CellEndEdit);
             // 
             // uxAwayTeamPlayerGrid
             // 
-            this.uxAwayTeamPlayerGrid.AllowUserToAddRows = false;
-            this.uxAwayTeamPlayerGrid.AllowUserToDeleteRows = false;
             this.uxAwayTeamPlayerGrid.AllowUserToResizeColumns = false;
             this.uxAwayTeamPlayerGrid.AllowUserToResizeRows = false;
             this.uxAwayTeamPlayerGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
@@ -88,6 +85,7 @@ namespace _21_22NBAStats
             this.uxAwayTeamPlayerGrid.RowTemplate.Height = 24;
             this.uxAwayTeamPlayerGrid.Size = new System.Drawing.Size(930, 110);
             this.uxAwayTeamPlayerGrid.TabIndex = 3;
+            this.uxAwayTeamPlayerGrid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.uxAwayTeamPlayerGrid_CellEndEdit);
             // 
             // uxHomeTeamComboBox
             // 
@@ -268,7 +266,7 @@ namespace _21_22NBAStats
             this.Controls.Add(this.uxHomeTeamComboBox);
             this.Controls.Add(this.uxAwayTeamPlayerGrid);
             this.Controls.Add(this.uxHomeTeamPlayerGrid);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddGamePanel";
             this.Size = new System.Drawing.Size(934, 416);
             this.Load += new System.EventHandler(this.AddGamePanel_Load);

@@ -44,6 +44,7 @@
     <Compile Include="DataDelegates\GetAllCoachesDataDelegate.cs" />
     <Compile Include="DataDelegates\GetAllTeamsDataDelegate.cs" />
     <Compile Include="DataDelegates\GetAllPlayersDataDelegate.cs" />
+    <Compile Include="DataDelegates\InsertGameStatDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePlayersGameStatsDataDelegate.cs" />
     <Compile Include="DataDelegates\InsertGameAndTeamGamesDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveTeamGameResults.cs" />
