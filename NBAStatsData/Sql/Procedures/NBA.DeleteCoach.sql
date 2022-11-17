@@ -1,0 +1,6 @@
+﻿CREATE OR ALTER PROCEDURE NBA.DeleteCoach
+	@CoachName NVARCHAR(128)
+AS
+DELETE FROM NBA.Coach WHERE [Name] = @CoachName;
+GO
+

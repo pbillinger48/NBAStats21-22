@@ -89,6 +89,8 @@
     <Content Include="Sql\Data\NBA.CreateTeamType.sql" />
     <Content Include="Sql\Data\NBA.CreateTeam.sql" />
     <Content Include="Sql\Procedures\NBA.GetAllCoaches.sql" />
+    <Content Include="Sql\Procedures\NBA.DeleteCoach.sql" />
+    <Content Include="Sql\Procedures\NBA.InsertCoach.sql" />
     <Content Include="Sql\Procedures\NBA.RetrieveTeamsCurrentPlayers.sql" />
     <Content Include="Sql\Procedures\NBA.GetAllTeams.sql" />
     <Content Include="Sql\Procedures\NBA.GetAllPlayers.sql" />
