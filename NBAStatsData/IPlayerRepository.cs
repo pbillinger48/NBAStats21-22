@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NBAStatsData
 {
-    public interface IPlayerSeasonStatsRepository
+    public interface IPlayerRepository
     {
         /// <summary>
         /// Retrieves all players in the database.

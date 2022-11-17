@@ -39,7 +39,7 @@ namespace _21_22NBAStats
             uxMonth.DataSource = null;
             uxMonth.DataSource = monthList;
 
-            var repo1 = new SqlPlayerSeasonStatsRepository(connectionString);
+            var repo1 = new SqlPlayerRepository(connectionString);
             IReadOnlyList<Player> list1 = repo1.GetAllPlayers();
             var playersList = new List<string>();
             playersList.Add("");
@@ -53,9 +53,9 @@ namespace _21_22NBAStats
 
         private void uxPlayerMonthStats_Click(object sender, EventArgs e)
         {
-            IPlayerSeasonStatsRepository repo;
+            IPlayerRepository repo;
 
-            repo = new SqlPlayerSeasonStatsRepository(connectionString);
+            repo = new SqlPlayerRepository(connectionString);
 
             int month = 0;
             if ((string)uxMonth.SelectedValue == "January") month = 1;

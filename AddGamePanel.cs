@@ -68,7 +68,7 @@ namespace _21_22NBAStats
 
         private void AddGamePanel_Load(object sender, EventArgs e)
         {
-            var repo = new SqlTeamSeasonSummaryRepository(connectionString);
+            var repo = new SqlTeamRepository(connectionString);
             IReadOnlyList<Team> list = repo.GetAllTeams();
             var teamsList = new List<string>();
             teamsList.Add("");

@@ -23,7 +23,7 @@ namespace _21_22NBAStats
 
         private void TeamPanel_Load(object sender, EventArgs e)
         {
-            var repo = new SqlTeamSeasonSummaryRepository(connectionString);
+            var repo = new SqlTeamRepository(connectionString);
 
             IReadOnlyList<TeamSeasonSummary> list = repo.RetrieveTeamSeasonSummaries("", null, null, null, null, null, null, null, null, null, null);
 
@@ -56,7 +56,7 @@ namespace _21_22NBAStats
 
         private void uxTeamSeasonStats_Click(object sender, EventArgs e)
         {
-            var repo = new SqlTeamSeasonSummaryRepository(connectionString);
+            var repo = new SqlTeamRepository(connectionString);
             int? WinsMin = 0;
             int? WinsMax = 0;
             int? LossesMin = 0;

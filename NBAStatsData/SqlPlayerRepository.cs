@@ -9,11 +9,11 @@ using NBAStatsData.DataDelegates;
 
 namespace NBAStatsData
 {
-    public class SqlPlayerSeasonStatsRepository: IPlayerSeasonStatsRepository
+    public class SqlPlayerRepository: IPlayerRepository
     {
         private readonly SqlCommandExecutor executor;
 
-        public SqlPlayerSeasonStatsRepository(string connectionString)
+        public SqlPlayerRepository(string connectionString)
         {
             executor = new SqlCommandExecutor(connectionString);
         }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NBAStatsData
 {
-    public interface ITeamSeasonSummaryRepository
+    public interface ITeamRepository
     {
         /// <summary>
         /// Retrieves all teams in the database.
@@ -43,5 +43,12 @@ namespace NBAStatsData
         /// </summary>
         /// <returns>All of the coaches and their teams</returns>
         IReadOnlyList<Coach> GetAllCoaches();
+
+        /// <summary>
+        /// Gets all the current players for a given team
+        /// </summary>
+        /// <param name="teamName">Desired team</param>
+        /// <returns>All the current players for a team</returns>
+        IReadOnlyList<TeamsCurrentPlayers> RetrieveTeamsCurrentPlayers(string teamName);
     }
 }

@@ -42,12 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataDelegates\GetAllCoachesDataDelegate.cs" />
+    <Compile Include="DataDelegates\RetrieveTeamsCurrentPlayersDataDelegate.cs" />
     <Compile Include="DataDelegates\GetAllTeamsDataDelegate.cs" />
     <Compile Include="DataDelegates\GetAllPlayersDataDelegate.cs" />
     <Compile Include="DataDelegates\InsertGameStatDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePlayersGameStatsDataDelegate.cs" />
     <Compile Include="DataDelegates\InsertGameAndTeamGamesDataDelegate.cs" />
-    <Compile Include="DataDelegates\RetrieveTeamGameResults.cs" />
+    <Compile Include="DataDelegates\RetrieveTeamGameResultsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveRecordBasedOnMinutesDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePlayerVsOpponentStatsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePlayersMonthStatsDataDelegate.cs" />
@@ -57,12 +58,13 @@
     <Compile Include="Models\PlayerVsOpponentStats.cs" />
     <Compile Include="Models\RecordBasedOnMinutes.cs" />
     <Compile Include="Models\TeamGameResults.cs" />
+    <Compile Include="Models\TeamsCurrentPlayers.cs" />
     <Compile Include="SqlInsertDataRepository.cs" />
-    <Compile Include="SqlTeamSeasonSummaryRepository.cs" />
+    <Compile Include="SqlTeamRepository.cs" />
     <Compile Include="DataDelegates\GetPlayerDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePlayersSeasonStatsDataDelegate.cs" />
-    <Compile Include="IPlayerSeasonStatsRepository.cs" />
-    <Compile Include="ITeamSeasonSummaryRepository.cs" />
+    <Compile Include="IPlayerRepository.cs" />
+    <Compile Include="ITeamRepository.cs" />
     <Compile Include="Models\Coach.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\GameStats.cs" />
@@ -73,7 +75,7 @@
     <Compile Include="Models\TeamSeasonSummary.cs" />
     <Compile Include="Models\TeamType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SqlPlayerSeasonStatsRepository.cs" />
+    <Compile Include="SqlPlayerRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\CreateDatabase.sql" />
@@ -85,6 +87,7 @@
     <Content Include="Sql\Data\NBA.CreateTeamType.sql" />
     <Content Include="Sql\Data\NBA.CreateTeam.sql" />
     <Content Include="Sql\Procedures\NBA.GetAllCoaches.sql" />
+    <Content Include="Sql\Procedures\NBA.RetrieveTeamsCurrentPlayers.sql" />
     <Content Include="Sql\Procedures\NBA.GetAllTeams.sql" />
     <Content Include="Sql\Procedures\NBA.GetAllPlayers.sql" />
     <Content Include="Sql\Procedures\NBA.InsertGameStat.sql" />

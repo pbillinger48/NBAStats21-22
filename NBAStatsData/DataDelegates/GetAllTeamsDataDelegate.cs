@@ -24,9 +24,6 @@ namespace NBAStatsData.DataDelegates
 
         public override IReadOnlyList<Team> Translate(SqlCommand command, IDataRowReader reader)
         {
-            if (!reader.Read())
-                return null;
-
             var list = new List<Team>();
 
             while (reader.Read())
