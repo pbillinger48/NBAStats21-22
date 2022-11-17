@@ -37,9 +37,21 @@ namespace _21_22NBAStats
 
                 string awayTeam = (string)uxAwayTeamComboBox.SelectedValue;
 
+                if (homeTeam == awayTeam)
+                {
+                    MessageBox.Show("Home team and Away team cannot be the same team.");
+                    return;
+                }
+
                 int homePoints = GetHomePoints();
 
                 int awayPoints = GetAwayPoints();
+
+                if (homePoints == awayPoints)
+                {
+                    MessageBox.Show("Ties are not allowed.");
+                    return;
+                }
 
                 repo.InsertGameAndTeamGames(date, homeTeam, awayTeam, homePoints, awayPoints);
 
@@ -60,10 +72,16 @@ namespace _21_22NBAStats
             catch(Exception)
             {
                 MessageBox.Show("Error Inserting the game stats");
+                return;
             }
-            
-
-
+            MessageBox.Show("Game successfully added!");
+            awayPlayerTable.Clear();
+            homePlayerTable.Clear();
+            uxAwayTeamPlayerGrid.DataSource = null;
+            uxAwayTeamPlayerGrid.DataSource = awayPlayerTable;
+            uxHomeTeamPlayerGrid.DataSource = null;
+            uxHomeTeamPlayerGrid.DataSource = homePlayerTable;
+            UpdateScores();
         }
 
         private void AddGamePanel_Load(object sender, EventArgs e)
@@ -71,7 +89,6 @@ namespace _21_22NBAStats
             var repo = new SqlTeamRepository(connectionString);
             IReadOnlyList<Team> list = repo.GetAllTeams();
             var teamsList = new List<string>();
-            teamsList.Add("");
             foreach (var item in list)
             {
                 teamsList.Add(item.Name);

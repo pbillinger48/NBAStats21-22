@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddDeleteCoachPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddDeleteCoachPanel.Designer.cs">
+      <DependentUpon>AddDeleteCoachPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddGamePanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     <Compile Include="HomeForm.Designer.cs">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddDeleteCoachPanel.resx">
+      <DependentUpon>AddDeleteCoachPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddGamePanel.resx">
       <DependentUpon>AddGamePanel.cs</DependentUpon>
     </EmbeddedResource>
