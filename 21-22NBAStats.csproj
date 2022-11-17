@@ -97,6 +97,12 @@
     <Compile Include="OtherPlayerQueriesPanel.Designer.cs">
       <DependentUpon>OtherPlayerQueriesPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="SourcesPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SourcesPanel.Designer.cs">
+      <DependentUpon>SourcesPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="TeamGameResultsPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </Compile>
     <EmbeddedResource Include="OtherPlayerQueriesPanel.resx">
       <DependentUpon>OtherPlayerQueriesPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SourcesPanel.resx">
+      <DependentUpon>SourcesPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeamGameResultsPanel.resx">
       <DependentUpon>TeamGameResultsPanel.cs</DependentUpon>
