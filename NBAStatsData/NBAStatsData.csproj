@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataDelegates\GetAllCoachesDataDelegate.cs" />
+    <Compile Include="DataDelegates\DeleteCoachDataDelegate.cs" />
+    <Compile Include="DataDelegates\InsertCoachDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveTeamsCurrentPlayersDataDelegate.cs" />
     <Compile Include="DataDelegates\GetAllTeamsDataDelegate.cs" />
     <Compile Include="DataDelegates\GetAllPlayersDataDelegate.cs" />
@@ -59,7 +61,7 @@
     <Compile Include="Models\RecordBasedOnMinutes.cs" />
     <Compile Include="Models\TeamGameResults.cs" />
     <Compile Include="Models\TeamsCurrentPlayers.cs" />
-    <Compile Include="SqlInsertDataRepository.cs" />
+    <Compile Include="SqlDataModificationRepository.cs" />
     <Compile Include="SqlTeamRepository.cs" />
     <Compile Include="DataDelegates\GetPlayerDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePlayersSeasonStatsDataDelegate.cs" />

@@ -7,6 +7,7 @@ BEGIN
         REFERENCES NBA.Team(TeamID),
       [Name] NVARCHAR(50) NOT NULL,
 
-      UNIQUE(TeamID)
+      UNIQUE(TeamID),
+      UNIQUE([Name])
    );
 END;

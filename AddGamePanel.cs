@@ -29,7 +29,7 @@ namespace _21_22NBAStats
         {
             try
             {
-                var repo = new SqlInsertDataRepository(connectionString);
+                var repo = new SqlDataModificationRepository(connectionString);
 
                 var date = new DateTime((int)uxYearBox.Value, (int)uxMonthBox.Value, (int)uxDayBox.Value);
 
