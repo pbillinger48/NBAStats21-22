@@ -43,9 +43,11 @@ namespace _21_22NBAStats
             this.coachesListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataModificationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addDeleteCoachToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testPanelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uxMainPanel = new System.Windows.Forms.Panel();
-            this.addDeleteCoachToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uxPageLabel = new System.Windows.Forms.Label();
+            this.sourcesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uxMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,11 +56,12 @@ namespace _21_22NBAStats
             this.uxMenuStrip.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.uxMenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.uxMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.testPanelsToolStripMenuItem,
             this.playersToolStripMenuItem,
             this.teamsToolStripMenuItem,
             this.coachesToolStripMenuItem,
             this.dataModificationToolStripMenuItem,
-            this.testPanelsToolStripMenuItem});
+            this.sourcesToolStripMenuItem});
             this.uxMenuStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.uxMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.uxMenuStrip.Name = "uxMenuStrip";
@@ -164,9 +167,16 @@ namespace _21_22NBAStats
             // addGameToolStripMenuItem
             // 
             this.addGameToolStripMenuItem.Name = "addGameToolStripMenuItem";
-            this.addGameToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.addGameToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
             this.addGameToolStripMenuItem.Text = "Add Game";
             this.addGameToolStripMenuItem.Click += new System.EventHandler(this.addGameToolStripMenuItem_Click);
+            // 
+            // addDeleteCoachToolStripMenuItem
+            // 
+            this.addDeleteCoachToolStripMenuItem.Name = "addDeleteCoachToolStripMenuItem";
+            this.addDeleteCoachToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
+            this.addDeleteCoachToolStripMenuItem.Text = "Add/Delete Coach";
+            this.addDeleteCoachToolStripMenuItem.Click += new System.EventHandler(this.addDeleteCoachToolStripMenuItem_Click);
             // 
             // testPanelsToolStripMenuItem
             // 
@@ -177,24 +187,35 @@ namespace _21_22NBAStats
             // 
             // uxMainPanel
             // 
-            this.uxMainPanel.Location = new System.Drawing.Point(5, 31);
+            this.uxMainPanel.Location = new System.Drawing.Point(5, 73);
             this.uxMainPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uxMainPanel.Name = "uxMainPanel";
             this.uxMainPanel.Size = new System.Drawing.Size(1246, 512);
             this.uxMainPanel.TabIndex = 2;
             // 
-            // addDeleteCoachToolStripMenuItem
+            // uxPageLabel
             // 
-            this.addDeleteCoachToolStripMenuItem.Name = "addDeleteCoachToolStripMenuItem";
-            this.addDeleteCoachToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.addDeleteCoachToolStripMenuItem.Text = "Add/Delete Coach";
-            this.addDeleteCoachToolStripMenuItem.Click += new System.EventHandler(this.addDeleteCoachToolStripMenuItem_Click);
+            this.uxPageLabel.AutoSize = true;
+            this.uxPageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uxPageLabel.Location = new System.Drawing.Point(12, 38);
+            this.uxPageLabel.Name = "uxPageLabel";
+            this.uxPageLabel.Size = new System.Drawing.Size(255, 29);
+            this.uxPageLabel.TabIndex = 3;
+            this.uxPageLabel.Text = "2021-22 NBA Statistics";
+            // 
+            // sourcesToolStripMenuItem
+            // 
+            this.sourcesToolStripMenuItem.Name = "sourcesToolStripMenuItem";
+            this.sourcesToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
+            this.sourcesToolStripMenuItem.Text = "Sources";
+            this.sourcesToolStripMenuItem.Click += new System.EventHandler(this.sourcesToolStripMenuItem_Click);
             // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1259, 546);
+            this.ClientSize = new System.Drawing.Size(1259, 594);
+            this.Controls.Add(this.uxPageLabel);
             this.Controls.Add(this.uxMainPanel);
             this.Controls.Add(this.uxMenuStrip);
             this.MainMenuStrip = this.uxMenuStrip;
@@ -228,5 +249,7 @@ namespace _21_22NBAStats
         private System.Windows.Forms.ToolStripMenuItem addGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem currentPlayersListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addDeleteCoachToolStripMenuItem;
+        private System.Windows.Forms.Label uxPageLabel;
+        private System.Windows.Forms.ToolStripMenuItem sourcesToolStripMenuItem;
     }
 }

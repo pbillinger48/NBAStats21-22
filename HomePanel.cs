@@ -16,5 +16,11 @@ namespace _21_22NBAStats
         {
             InitializeComponent();
         }
+
+        private void HomePanel_Load(object sender, EventArgs e)
+        {
+            uxPictureBox.Left = (this.ClientSize.Width - uxPictureBox.Width) / 2;
+            uxPictureBox.Top = (this.ClientSize.Height - uxPictureBox.Height) / 2;
+        }
     }
 }
