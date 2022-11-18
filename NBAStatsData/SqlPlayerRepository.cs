@@ -34,20 +34,6 @@ namespace NBAStatsData
             //return executor.ExecuteNonQuery(d);
         }
 
-        public Player FetchPlayer(int PlayerId)
-        {
-            throw new NotImplementedException();
-
-            //var d = new FetchPlayerDataDelegate(PlayerId);
-            //return executor.ExecuteReader(d);
-        }
-
-        public Player GetPlayer(string name)
-        {
-
-            var d = new GetPlayerDataDelegate(name);
-            return executor.ExecuteReader(d);
-        }
 
         public IReadOnlyList<PlayerSeasonStats> RetrievePlayers(string playerName, string teamName,
             decimal? ppgMin, decimal? ppgMax, decimal? RPGMax, decimal? RPGMin,

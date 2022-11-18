@@ -20,28 +20,7 @@ namespace NBAStatsData
                 decimal? APGMax, decimal? APGMin, decimal? BPGMax, decimal? BPGMin, decimal? SPGMax, decimal? SPGMin,
                 decimal? TPGMax, decimal? TPGMin, decimal? MPGMax, decimal? MPGMin);
 
-        /// <summary>
-        /// Fetches the Player with the given <paramref name="playerId"/> if it exists.
-        /// </summary>
-        /// <param name="playerId">Identifier of the Player to fetch.</param>
-        /// <returns>
-        /// An instance of <see cref="Player"/> containing the information of the requested Player.
-        /// </returns>
-        /// <exception cref="DataAccess.RecordNotFoundException">
-        /// Thrown if <paramref name="playerId"/> does not exist.
-        /// </exception>
-        Player FetchPlayer(int playerId);
 
-        /// <summary>
-        /// Gets the Player with the given <paramref name="playerId"/> if it exists.
-        /// </summary>
-        /// <param name="name">Email of the Player to get.</param>
-        /// <returns>
-        /// An instance of <see cref="Player"/> containing the information of the requested Player
-        /// if one exists with with the provided <paramref name="name"/>.
-        /// If one is not found, <c>null</c> is returned.
-        /// </returns>
-        Player GetPlayer(string name);
 
         /// <summary>
         /// Creates a new player in the repository.

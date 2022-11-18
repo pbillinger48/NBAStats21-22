@@ -63,19 +63,14 @@
     <Compile Include="Models\TeamsCurrentPlayers.cs" />
     <Compile Include="SqlDataModificationRepository.cs" />
     <Compile Include="SqlTeamRepository.cs" />
-    <Compile Include="DataDelegates\GetPlayerDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePlayersSeasonStatsDataDelegate.cs" />
     <Compile Include="IPlayerRepository.cs" />
     <Compile Include="ITeamRepository.cs" />
     <Compile Include="Models\Coach.cs" />
-    <Compile Include="Models\Game.cs" />
-    <Compile Include="Models\GameStats.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\PlayerSeasonStats.cs" />
     <Compile Include="Models\Team.cs" />
-    <Compile Include="Models\TeamGame.cs" />
     <Compile Include="Models\TeamSeasonSummary.cs" />
-    <Compile Include="Models\TeamType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlPlayerRepository.cs" />
   </ItemGroup>
@@ -103,7 +98,6 @@
     <Content Include="Sql\Procedures\NBA.RetrieveTeamGameResults.sql" />
     <Content Include="Sql\Procedures\NBA.RetrieveTeamSeasonSummaries.sql" />
     <Content Include="Sql\Procedures\NBA.RetrievePlayersSeasonStats.sql" />
-    <Content Include="Sql\Procedures\NBA.GetPlayer.sql" />
     <Content Include="Sql\Schemas\NBA.sql" />
     <Content Include="Sql\Tables\NBA.Coach.sql" />
     <Content Include="Sql\Tables\NBA.Game.sql" />
