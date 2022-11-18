@@ -43,5 +43,10 @@ namespace NBAStatsData
         {
             return executor.ExecuteNonQuery(new InsertPlayerDataDelegate(playerName, teamName));
         }
+
+        public bool UpdatePlayer(string playerName, string teamName)
+        {
+            return executor.ExecuteNonQuery(new UpdatePlayerDataDelegate(playerName, teamName));
+        }
     }
 }

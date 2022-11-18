@@ -87,7 +87,7 @@ namespace _21_22NBAStats
                 var repo = new SqlDataModificationRepository(connectionString);
                 try
                 {
-                    //repo.UpdatePlayer(PlayerName, (string)uxTeamName2.SelectedValue);
+                    repo.UpdatePlayer(PlayerName, (string)uxTeamName2.SelectedValue);
                 }
                 catch (Exception)
                 {

@@ -56,6 +56,7 @@
     <Compile Include="DataDelegates\RetrievePlayerVsOpponentStatsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrievePlayersMonthStatsDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveTeamSeasonSummariesDataDelegate.cs" />
+    <Compile Include="DataDelegates\UpdatePlayerDataDelegate.cs" />
     <Compile Include="IDataModificationRepository.cs" />
     <Compile Include="Models\PlayerGameStats.cs" />
     <Compile Include="Models\PlayerMonthStats.cs" />
@@ -85,6 +86,7 @@
     <Content Include="Sql\Data\NBA.CreateCoach.sql" />
     <Content Include="Sql\Data\NBA.CreateTeamType.sql" />
     <Content Include="Sql\Data\NBA.CreateTeam.sql" />
+    <Content Include="Sql\Procedures\NBA.UpdatePlayer.sql" />
     <Content Include="Sql\Procedures\NBA.GetAllCoaches.sql" />
     <Content Include="Sql\Procedures\NBA.DeleteCoach.sql" />
     <Content Include="Sql\Procedures\NBA.InsertPlayer.sql" />

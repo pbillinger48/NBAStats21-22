@@ -61,6 +61,7 @@ Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Pro
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Procedures\NBA.InsertCoach.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Procedures\NBA.DeleteCoach.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Procedures\NBA.InsertPlayer.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "..\Sql\Procedures\NBA.UpdatePlayer.sql"
 
 
 Write-Host "Inserting data..."
