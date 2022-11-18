@@ -25,7 +25,6 @@ namespace _21_22NBAStats
             var repo1 = new SqlPlayerRepository(connectionString);
             IReadOnlyList<Player> list1 = repo1.GetAllPlayers();
             var playersList = new List<string>();
-            playersList.Add("");
             foreach (var item in list1)
             {
                 playersList.Add(item.Name);
@@ -39,7 +38,6 @@ namespace _21_22NBAStats
             var repo2 = new SqlTeamRepository(connectionString);
             IReadOnlyList<Team> list2 = repo2.GetAllTeams();
             var teamsList = new List<string>();
-            teamsList.Add("");
             foreach (var item in list2)
             {
                 teamsList.Add(item.Name);

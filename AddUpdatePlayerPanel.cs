@@ -70,6 +70,18 @@ namespace _21_22NBAStats
                 }
                 MessageBox.Show("Player successfully inserted.");
                 uxPlayerName.Text = "";
+                IPlayerRepository repo2;
+
+                repo2 = new SqlPlayerRepository(connectionString);
+
+                IReadOnlyList<Player> list = repo2.GetAllPlayers();
+                var playersList = new List<string>();
+                foreach (var item in list)
+                {
+                    playersList.Add(item.Name);
+                }
+                uxPlayerName2.DataSource = null;
+                uxPlayerName2.DataSource = playersList;
             }
             else
             {
