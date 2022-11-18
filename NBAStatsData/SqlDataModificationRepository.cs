@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NBAStatsData
 {
-    public class SqlDataModificationRepository
+    public class SqlDataModificationRepository: IDataModificationRepository
     {
         private readonly SqlCommandExecutor executor;
 
@@ -37,6 +37,11 @@ namespace NBAStatsData
         public bool DeleteCoach(string coachName)
         {
             return executor.ExecuteNonQuery(new DeleteCoachDataDelegate(coachName));
+        }
+
+        public bool InsertPlayer(string playerName, string teamName)
+        {
+            return executor.ExecuteNonQuery(new InsertPlayerDataDelegate(playerName, teamName));
         }
     }
 }

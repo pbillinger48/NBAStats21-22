@@ -59,6 +59,12 @@
     <Compile Include="AddGamePanel.Designer.cs">
       <DependentUpon>AddGamePanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddUpdatePlayerPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddUpdatePlayerPanel.Designer.cs">
+      <DependentUpon>AddUpdatePlayerPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="CoachesListPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddGamePanel.resx">
       <DependentUpon>AddGamePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddUpdatePlayerPanel.resx">
+      <DependentUpon>AddUpdatePlayerPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CoachesListPanel.resx">
       <DependentUpon>CoachesListPanel.cs</DependentUpon>

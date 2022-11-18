@@ -56,7 +56,6 @@ namespace _21_22NBAStats
             var repo = new SqlTeamRepository(connectionString);
             IReadOnlyList<Team> list = repo.GetAllTeams();
             var teamsList = new List<string>();
-            teamsList.Add("");
             foreach (var item in list)
             {
                 teamsList.Add(item.Name);

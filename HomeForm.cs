@@ -133,5 +133,14 @@ namespace _21_22NBAStats
             panel.Show();
             uxPageLabel.Text = "Project Sources";
         }
+
+        private void addPlayerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            uxMainPanel.Controls.Clear();
+            AddUpdatePlayerPanel panel = new AddUpdatePlayerPanel() { Dock = DockStyle.Fill };
+            uxMainPanel.Controls.Add(panel);
+            panel.Show();
+            uxPageLabel.Text = "Add or Update Player";
+        }
     }
 }
